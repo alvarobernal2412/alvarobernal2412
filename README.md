@@ -10,10 +10,9 @@
 </p>
 
 <br/>
+<h2 align="center">My Skill Set</h2>
 
-## My Skill Set
-
-<table><tr><td valign="top" width="33%">
+<table><tr><td valign="top" width="25%">
 
 ### Frontend
 
@@ -69,9 +68,9 @@
 </td></tr></table>
 <br/>
 
-## Connect with me
+<h2 align="center">Connect with me</h2>
 
-<div align="left">
+<div align="center">
 <a href="https://linkedin.com/in/álvaro-bernal-a463a0269" target="_blank">
 <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
 </a>
@@ -79,19 +78,19 @@
 
 <br/>
 
-## Github Stats
+<h2 align="center">Github Stats</h2>
 
 <div align="center"><img src="https://github-readme-stats.vercel.app/api?username=alvarobernal2412&show_icons=true&count_private=true&hide_border=true&theme=radical" align="center" /></div>
 <div align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&hide_border=true&layout=compact&theme=radical" align="center" /></div>
 
 <br/>
 
-## Github Trophies
+<h2 align="center">Github Trophies</h2>
 
 <div align="center"><img src="https://github-profile-trophy.vercel.app/?username=alvarobernal2412&theme=onedark&title=Reviews,Commits,Issue,PullRequest" align="center" /></div>
 <br/>
 
-## Spotify Playing 🎧
+<h2 align="center">Spotify Playing 🎧</h2>
 
 <br/>
 
