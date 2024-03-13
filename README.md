@@ -82,9 +82,13 @@
 ## Github Stats
 
 <div align="center"><img src="https://github-readme-stats.vercel.app/api?username=alvarobernal2412&show_icons=true&count_private=true&hide_border=true&theme=radical" align="center" /></div>
-<div align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&hide_border=true&layout=compact&theme=radical" align="center" /></div>  
-<div align="center" style= "overflow: hidden;position: relative;right: -220px;"><img src="https://github-profile-trophy.vercel.app/?username=alvarobernal2412&theme=onedark&title=Reviews,Commits,Issue,PullRequest" align="center" style="overflow: hidden;position: relative;right: -220px;"/></div>
+<div align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&hide_border=true&layout=compact&theme=radical" align="center" /></div>
 
+<br/>
+
+## Github Trophies
+
+<div align="center"><img src="https://github-profile-trophy.vercel.app/?username=alvarobernal2412&theme=onedark&title=Reviews,Commits,Issue,PullRequest" align="center" /></div>
 <br/>
 
 ## Spotify Playing 🎧
