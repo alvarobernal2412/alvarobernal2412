@@ -1,9 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import cursor from '../../public/cursor.png';
+import clickableCursor from '../../public/clickable-cursor.png';
+
+const title = '___😈___';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={title}>
 	<main>
 		<svg
 			class="astro-a"
@@ -64,7 +68,7 @@ import Card from '../components/Card.astro';
 </Layout>
 
 <style>
-	main {
+	main{
 		margin: auto;
 		padding: 1rem;
 		width: 800px;

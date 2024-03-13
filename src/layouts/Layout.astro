@@ -21,6 +21,27 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	body{
+		cursor: url("./cursor.png"),auto;
+	}
+	a:hover,
+	button:hover,
+	[role="button"]:hover,
+	[type="button"]:hover,
+	[type="submit"]:hover,
+	[aria-haspopup="dialog"]:hover,
+	[aria-haspopup="menu"]:hover,
+	[aria-haspopup="listbox"]:hover,
+	[aria-haspopup="grid"]:hover,
+	[aria-haspopup="tree"]:hover,
+	[aria-haspopup="grid"]:hover,
+	[aria-haspopup="listbox"]:hover,
+	[aria-haspopup="treegrid"]:hover{
+        cursor: url("./click.png"),auto;
+    }
+	p, h1, h2, h3, h4, h5, h6, span {
+        cursor: url("./text.png"),auto; /* 90F3F1 */
+    }
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
