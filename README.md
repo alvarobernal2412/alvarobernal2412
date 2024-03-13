@@ -90,14 +90,6 @@
 <div align="center"><img src="https://github-profile-trophy.vercel.app/?username=alvarobernal2412&theme=onedark&title=Reviews,Commits,Issue,PullRequest" align="center" /></div>
 <br/>
 
-<h2 align="center">Spotify Playing 🎧</h2>
-
-<br/>
-
-<div align="center"><img style="width: 20%; height:20%;"src="https://spotify-github-profile.vercel.app/api/view?uid=c3ozo0jh8z2peocm0px7jh899&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false" /></div>
-
-<br/>
-
 <div align="center">
 <img src="https://komarev.com/ghpvc/?username=alvarobernal2412&&style=flat-square" align="center" />
 </div>
