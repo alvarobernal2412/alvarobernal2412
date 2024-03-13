@@ -1,5 +1,10 @@
+<style>
+   .imagen-redondeada {
+            border-radius: 50%; /* Puedes ajustar este valor para cambiar el grado de redondeo */
+        }
+</style>
 <p align="center" width="300">
-   <img align="center" width="100" src="./static/images/readmeImg.jpeg" style="border-radius: 50%;"/>
+   <img align="center" width="100" src="./static/images/readmeImg.jpeg" class="imagen-redondeada"/>
    <h3 align="center">¡Hey 👋! I'm Álvaro Bernal 👨🏻‍💻</h3>
    <h5 align="center"> Welcome to my GitHub profile! I hope you find what you are looking for</h5>
    <h5 align="center">If you need help, don't hesitate to contact me clicking
