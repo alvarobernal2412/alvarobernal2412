@@ -2,7 +2,7 @@
    <br>
    <img align="center" width="100" src="./static/images/readmeImg.png"/>
    <br>
-   <a style="display: flex; justify-content:center;"href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=444444&random=false&width=435&lines=Hey+%F0%9F%91%8B+!+I'm+%C3%81lvaro+Bernal;An+Undergraduate+Software+Engineer;And+research+assistant+%F0%9F%92%BB" alt="Typing SVG" /></a>
+   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=0E43F7&random=false&width=435&lines=Hey+%F0%9F%91%8B+!+I'm+%C3%81lvaro+Bernal+Caunedo;An+Undergraduate+Software+Engineer;And+research+assistant+in+BPM+topics" alt="Typing SVG" />
    <h5 align="center"> Welcome to my GitHub profile! I hope you find what you are looking for</h5>
    <h5 align="center">If you need help, don't hesitate to contact me clicking
       <a href="mailto:alvarobc2412@gmail.com?subject=Consulta%20desde%20GitHub&body=Escribe%20aquí%20tu%20cuerpo">here</a>
@@ -80,8 +80,8 @@
 
 <h2 align="center">Github Stats</h2>
 
-<div align="center"><img src="https://github-readme-stats.vercel.app/api?username=alvarobernal2412&show_icons=true&count_private=true&hide_border=true&theme=radical" align="center" /></div>
-<div align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&hide_border=true&layout=compact&theme=radical" align="center" /></div>
+<div align="center"><img src="https://github-readme-stats.vercel.app/api?username=alvarobernal2412&show_icons=true&count_private=true&hide_border=true&theme=dark" align="center" /></div>
+<div align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&hide_border=true&layout=compact&theme=dark" align="center" /></div>
 
 <br/>
 
@@ -94,7 +94,7 @@
 
 <br/>
 
-<div align="center"><img src="https://spotify-github-profile.vercel.app/api/view?uid=c3ozo0jh8z2peocm0px7jh899&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false" /></div>
+<div align="center"><img style="width: 20%; height:20%;"src="https://spotify-github-profile.vercel.app/api/view?uid=c3ozo0jh8z2peocm0px7jh899&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false" /></div>
 
 <br/>
 
