@@ -1,6 +1,6 @@
 <p align="center" width="300">
    <br>
-   <img align="center" width="100" src="./profile/static/images/readmeImg.png"/>
+   <img align="center" width="100" src="./profile/static/images/readmeImg.webp"/>
    <br>
    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=0E43F7&random=false&width=435&lines=Hey+%F0%9F%91%8B+!+I'm+%C3%81lvaro+Bernal+Caunedo;An+Undergraduate+Software+Engineer;And+research+assistant+in+BPM+topics" alt="Typing SVG" />
    <h5 align="center"> Welcome to my GitHub profile! I hope you find what you are looking for</h5>
