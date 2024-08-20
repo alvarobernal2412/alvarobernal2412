@@ -1,0 +1,54 @@
+---
+const personalImageAlt = "Álvaro Bernal";
+import Badge from "./Badge.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import MailIcon from "./icons/Mail.astro";
+import SocialPill from "./Social.astro";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="https://avatars.githubusercontent.com/u/80347035?v=4"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://linkedin.com/in/álvaro-bernal-a463a0269"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Trabajando</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hola, soy Álvaro Bernal
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <span>Soy una persona trabajadora, proactiva y con ganas de aprender.</span>
+    <span class="text-yellow-200 opacity-80"
+      >Me considero amable, organizado y capaz de conseguir cualquier cosa que
+      me proponga.
+    </span>Mis intereses actuales dentro del ámbito del software son<span
+      class="opacity-70"
+    >
+      la ingeniería cloud y la gestión de tecnologías y proyectos informáticos,
+      además, me gusta aprender idiomas y trabajar en equipo.</span
+    >
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="alvarobc2412@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://linkedin.com/in/álvaro-bernal-a463a0269">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+  </nav>
+</div>

@@ -4,7 +4,8 @@ import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCE = [
   {
     date: "Octubre 2023 - Actualidad",
-    title: "Técnico Especialista - Universidad de Sevilla",
+    title: "Técnico Especialista",
+    company: "Universidad de Sevilla",
     description:
       "Desarrollo de un sistema de gestión de conformidad basado en mashups. El sistema permite a los usuarios gestionar el cumplimiento de normas como la ISO, metodologías de desarrollo de software y procesos de negocio.",
     link: "https://status-landing-page.vercel.app",
@@ -12,7 +13,7 @@ const EXPERIENCE = [
 ];
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">
+<ol class="relative mt-16">
   {
     EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-4">

@@ -1,15 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import LinkedIn from "../components/icons/LinkedIn.astro";
-import Social from "../components/Social.astro";
-import GitHub from "../components/icons/Github.astro";
-import Mail from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
 import ProjectsIcon from "../components/icons/Projects.astro";
 import Projects from "../components/Projects.astro";
+import Hero from "../components/Hero.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import AboutMe from "../components/AboutMe.astro";
 
 const title =
   "Porfolio de Álvaro Bernal - Ingeniero Software y Desarrollador Web";
@@ -18,69 +16,39 @@ const description =
 ---
 
 <Layout title={title} , description={description}>
-  <main class="px-6">
-    <SectionContainer class="py-44 pb-32">
-      <img
-        class="rounded-full size-16 mb-4"
-        src="https://avatars.githubusercontent.com/u/80347035?v=4"
-        alt="alvaro"
-      />
-      <h1
-        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-        Bienvenido, soy Álvaro <a
-          class="flex justify-center items-center"
-          href="https://linkedin.com/in/álvaro-bernal-a463a0269"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Badge>Trabajando</Badge>
-        </a>
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span
-          >Soy una persona trabajadora, proactiva y con ganas de aprender.</span
-        >
-        <span class="text-yellow-200 opacity-80"
-          >Me considero amable, organizado y capaz de conseguir cualquier cosa
-          que me proponga.
-        </span>Mis intereses actuales dentro del ámbito del software son<span
-          class="opacity-70"
-        >
-          la ingeniería cloud y la gestión de tecnologías y proyectos
-          informáticos, además, me gusta aprender idiomas y trabajar en equipo.</span
-        >
-      </h2>
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <Social href="https://linkedin.com/in/álvaro-bernal-a463a0269">
-          <LinkedIn class="size-4 md:size-6" />
-          LinkedIn
-        </Social>
-        <Social href="https://github.com/alvarobernal2412">
-          <GitHub class="size-4 md:size-6" />
-          GitHub
-        </Social>
-        <Social href="mailto:alvarobc2412@gmail.com">
-          <Mail class="size-4 md:size-6" />
-          Email
-        </Social>
-      </nav>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
     </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="experiencia">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <Briefcase class="size-8" />
+          Experiencia Laboral
+        </h2>
+        <Experience />
+      </SectionContainer>
 
-    <SectionContainer id="experiencia">
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Briefcase class="size-7" />
-        Experiencia Laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer id="proyectos">
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-        <ProjectsIcon class="size-7" />
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
+      <SectionContainer id="proyectos">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <ProjectsIcon class="size-7" />
+          Proyectos
+        </h2>
+        <Projects />
+      </SectionContainer>
+      <SectionContainer id="sobre-mi">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        >
+          <ProfileCheck class="size-8" />
+          Sobre mí
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>
