@@ -4,6 +4,7 @@ import Badge from "./Badge.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
 import MailIcon from "./icons/Mail.astro";
 import SocialPill from "./Social.astro";
+import Github from "./icons/Github.astro";
 ---
 
 <div class="max-w-xl">
@@ -31,24 +32,29 @@ import SocialPill from "./Social.astro";
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
     <span>Soy una persona trabajadora, proactiva y con ganas de aprender.</span>
-    <span class="text-yellow-200 opacity-80"
+    <span
+      class="text-yellow-500 dark:text-yellow-200 opacity-70 dark:opacity-100 font-bold"
       >Me considero amable, organizado y capaz de conseguir cualquier cosa que
       me proponga.
     </span>Mis intereses actuales dentro del ámbito del software son<span
-      class="opacity-70"
+      class="opacity-80"
     >
       la ingeniería cloud y la gestión de tecnologías y proyectos informáticos,
       además, me gusta aprender idiomas y trabajar en equipo.</span
     >
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="https://linkedin.com/in/álvaro-bernal-a463a0269">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
     <SocialPill href="alvarobc2412@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/álvaro-bernal-a463a0269">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
+    <SocialPill href="https://github.com/alvarobernal2412">
+      <Github class="size-4" />
+      Github
     </SocialPill>
   </nav>
 </div>
