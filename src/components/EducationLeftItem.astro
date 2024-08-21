@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  org: string;
+  date: string;
+  image: string;
+}
+const { title, org, date, image } = Astro.props;
+---
+
+<div
+  class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline group"
+>
+  <div class="order-1 w-5/12"></div>
+  <div
+    class="z-20 flex items-center order-1 bg-yellow-600 dark:bg-yellow-200 shadow-xl size-6 rounded-full"
+  >
+  </div>
+  <div
+    class="order-1 bg-yellow-600 dark:bg-yellow-200 dark:bg-opacity-60 rounded-lg shadow-xl w-5/12 px-6 py-4 relative overflow-hidden"
+  >
+    <img
+      src={image}
+      alt={title}
+      class="absolute inset-0 w-full h-full object-cover md:opacity-100 md:transition-opacity duration-500 ease-in-out group-hover:opacity-0 opacity-0 transition-none"
+    />
+
+    <div
+      class="relative z-10 md:transition-opacity duration-500 ease-in-out md:opacity-0 group-hover:opacity-100 opacity-100 transition-none"
+    >
+      <h3 class="mb-3 font-bold text-white text-xl">
+        {title}
+      </h3>
+      <p class="mt-3 text-sm text-white">{date}</p>
+      <p class="mt-1 text-sm text-white">{org}</p>
+    </div>
+  </div>
+</div>
