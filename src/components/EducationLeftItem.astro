@@ -17,16 +17,16 @@ const { title, org, date, image } = Astro.props;
   >
   </div>
   <div
-    class="md:order-1 bg-yellow-600 dark:bg-[#a09464] rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 relative overflow-hidden md:pt-4"
+    class="md:order-1 flex flex-col bg-yellow-600 dark:bg-[#a09464] rounded-lg shadow-xl w-full md:w-5/12 relative overflow-hidden space-y-4"
   >
     <img
       src={image}
       alt={title}
-      class="absolute inset-0 w-full h-1/2 md:h-full object-cover md:transition-opacity transition-none duration-500 ease-in-out md:group-hover:opacity-0"
+      class="md:absolute inset-0 w-full h-1/2 md:h-full object-cover md:transition-opacity transition-none duration-500 ease-in-out md:group-hover:opacity-0"
     />
 
     <div
-      class="relative z-10 md:transition-opacity duration-500 ease-in-out md:opacity-0 group-hover:opacity-100 opacity-100 transition-none pt-44 md:pt-0"
+      class="md:relative z-10 md:transition-opacity duration-500 ease-in-out md:opacity-0 group-hover:opacity-100 opacity-100 transition-none md:pt-0 px-6 pb-4"
     >
       <h3 class="mb-3 font-bold text-white text-xl text-balance">
         {title}
