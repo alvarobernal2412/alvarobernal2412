@@ -12,6 +12,9 @@ import Mysql from "./icons/Mysql.astro";
 import Nodered from "./icons/Nodered.astro";
 import React from "./icons/React.astro";
 import OpenAI from "./icons/Openai.astro";
+import Grafana from "./icons/Grafana.astro";
+import Jwt from "./icons/JWT.astro";
+import Express from "./icons/Express.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -58,6 +61,21 @@ const TAGS = {
     class: "bg-[#f0f0f0] text-black",
     icon: OpenAI,
   },
+  GRAFANA: {
+    name: "Grafana",
+    class: "bg-[#8E4E1E] text-white",
+    icon: Grafana,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-[#303030] text-white",
+    icon: Jwt,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-[#303030] text-white",
+    icon: Express,
+  },
 };
 const PROJECTS = [
   {
@@ -72,10 +90,17 @@ const PROJECTS = [
   {
     title: "STATUS (POC)",
     description:
-      "Prueba de concepto orientada al desarrollo de un sistema de gestión de conformidad de procesos de negocios de la Universad de Sevilla. Mi papel en este proyecto es el de técnico especialista.",
+      "Prueba de concepto orientada al desarrollo de un sistema de gestión de conformidad de procesos de negocios de la Universad de Sevilla. Mi papel en este proyecto es el de técnico especialista en un equipo de 4 personas.",
     link: "https://status-landing-page.vercel.app",
     image: "/projects/status.webp",
-    tags: [TAGS.DOCKER, TAGS.NODERED, TAGS.REACT, TAGS.MYSQL, TAGS.CSS],
+    tags: [
+      TAGS.DOCKER,
+      TAGS.NODERED,
+      TAGS.REACT,
+      TAGS.MYSQL,
+      TAGS.CSS,
+      TAGS.GRAFANA,
+    ],
     github: "https://github.com/orgs/statuscompliance/repositories",
   },
   {
@@ -85,7 +110,14 @@ const PROJECTS = [
       "Desarrollo en individual de un chatbot de soporte para el modelado de flujos que miden la conformidad de procesos de negocio. Para ello, se ha utilizado la API de OpenAI para el procesamiento del lenguaje natural.",
     link: "https://status-docs.netlify.app/docs/Tooling/openAI",
     image: "/projects/chatbot.webp",
-    tags: [TAGS.NODERED, TAGS.OPENAI, TAGS.REACT, TAGS.CSS],
+    tags: [
+      TAGS.NODERED,
+      TAGS.OPENAI,
+      TAGS.REACT,
+      TAGS.CSS,
+      TAGS.JWT,
+      TAGS.EXPRESS,
+    ],
     github: "https://github.com/statuscompliance/status-frontend",
     file: "TFG_Alvbercau.pdf",
   },
