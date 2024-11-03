@@ -1,34 +1,32 @@
-<p align="center" width="300">
-   <br>
-   <img align="center" width="100" src="./profile/static/images/readmeImg.webp"/>
-   <br>
-   <img src="https://readme-typing-svg.demolab.com?font=Onest&weight=500&pause=300&color=77DD77&center=true&multiline=true&width=435&height=70&lines=Cloud+Infrastructure+%26+Software+Engineer;passionate+about+innovative+solutions+%F0%9F%92%BB" alt="Typing SVG" />
-   <h5 align="center"> Welcome to my GitHub profile! I hope you find what you are looking for</h5>
-   <h5 align="center">If you need help, don't hesitate to contact me clicking
-      <a href="mailto:alvarobc2412@gmail.com?subject=Consulta%20desde%20GitHub&body=Escribe%20aquí%20tu%20cuerpo">here</a>
-   </h5>
-
-</p>
-
-<div align="center">
-<a href="https://linkedin.com/in/álvaro-bernal-a463a0269" target="_blank">
-<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
-</a>
-</div>
-<br/>
-<br/>
-
-<div align="center" style="display: flex; justify-content: center; gap: 20px;">
-
-  <div>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&layout=donut" alt="Top Langs" />
-  </div>
-
-  <div>
-    <img src="https://github-readme-stats.vercel.app/api?username=alvarobernal2412&bg_color=30,000000,77DD77&title_color=fff&text_color=fff&rank_icon=github&show=reviews,prs_merged,prs_merged_percentage" alt="Anurag's GitHub stats" height="215"/>
-  </div>
-
-</div>
+<table style="width: 100%;">
+  <tr>
+    <td style="vertical-align: top; text-align: center;">
+      <div style="display: flex; justify-content: center; gap: 20px;">
+        <div>
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvarobernal2412&layout=donut" alt="Top Langs" />
+        </div>
+        <div>
+          <img src="https://github-readme-stats.vercel.app/api?username=alvarobernal2412&bg_color=30,000000,77DD77&title_color=fff&text_color=fff&rank_icon=github&show=reviews,prs_merged,prs_merged_percentage" alt="Anurag's GitHub stats" height="215"/>
+        </div>
+      </div>
+    </td>
+    <td style="vertical-align: top; text-align: center;">
+      <br>
+      <img align="center" width="100" src="./profile/static/images/readmeImg.webp"/>
+      <br>
+      <img src="https://readme-typing-svg.demolab.com?font=Onest&weight=500&pause=300&color=77DD77&center=true&multiline=true&width=435&height=70&lines=Cloud+Infrastructure+%26+Software+Engineer;passionate+about+innovative+solutions+%F0%9F%92%BB" alt="Typing SVG" />
+      <h5>Welcome to my GitHub profile! I hope you find what you are looking for</h5>
+      <h5>If you need help, don't hesitate to contact me clicking
+         <a href="mailto:alvarobc2412@gmail.com?subject=Consulta%20desde%20GitHub&body=Escribe%20aquí%20tu%20cuerpo">here</a>
+      </h5>
+      <div>
+        <a href="https://linkedin.com/in/álvaro-bernal-a463a0269" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" style="margin-bottom: 5px;" />
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
 
 
 
