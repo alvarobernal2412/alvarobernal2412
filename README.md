@@ -27,10 +27,10 @@
 
 
 
-### **Most used technologies**
+### **Most used technologies 🌐🔥**
 
 <details> 
-<summary>Frontend</summary>
+<summary>Frontend🎨💻</summary>
 <div align="center">
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>  
 <a href="https://tailwindcss.com" target="_blank"><img style="margin: 10px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tailwind_CSS_logo.svg/2560px-Tailwind_CSS_logo.svg.png" alt="Tailwind" height="35" width="190"/></a>  
@@ -46,7 +46,7 @@
 ---
 
 <details> 
-<summary>Backend</summary>
+<summary>Backend🔧🖥️</summary>
 <div align="center">
 <a href="https://nodejs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="Node.js" height="50" /></a>  
 <a href="https://expressjs.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/express-original-wordmark.svg" alt="Express.js" height="50" /></a>  
@@ -58,7 +58,7 @@
 ---
 
 <details> 
-<summary>DevOps</summary>
+<summary>DevOps⚙️🚀</summary>
 <div align="center">
 <a href="https://www.linux.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/linux-original.svg" alt="Linux" height="50" /></a>  
 <a href="https://github.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="50" /></a>  
@@ -73,7 +73,7 @@
 ---
 
 <details> 
-<summary>Others</summary>
+<summary>Others🗃️🧪</summary>
 <div align="center">
 <a href="https://www.latex-project.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/latex.png" alt="LaTeX" height="50" /></a>  
 <a href="https://www.postgresql.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="50" /></a>
