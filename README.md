@@ -27,9 +27,10 @@
 
 
 
-## **Most used technologies**
+### **Most used technologies**
 
-### Frontend
+<details> 
+<summary>Frontend</summary>
 <div align="center">
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>  
 <a href="https://tailwindcss.com" target="_blank"><img style="margin: 10px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tailwind_CSS_logo.svg/2560px-Tailwind_CSS_logo.svg.png" alt="Tailwind" height="35" width="190"/></a>  
@@ -39,21 +40,25 @@
 <a href="https://www.astro.build/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/astro.svg" alt="Astro" height="50" /></a>  
 <a href="https://nextjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nextjs.png" alt="NextJS" height="50" /></a>  
 
+</details>
 </div>
 
 ---
 
-### Backend
+<details> 
+<summary>Backend</summary>
 <div align="center">
 <a href="https://nodejs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nodejs-original-wordmark.svg" alt="Node.js" height="50" /></a>  
 <a href="https://expressjs.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/express-original-wordmark.svg" alt="Express.js" height="50" /></a>  
 <a href="https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html#:~:text=The%20Spring%20Expression%20Language%20(SpEL,and%20basic%20string%20templating%20functionality." target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/springio-icon.svg" alt="Spring" height="50" /></a>  
 <a href="https://www.djangoproject.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/django-original.svg" alt="Django" height="50" /></a> 
+</details>
 </div>
 
 ---
 
-### DevOps
+<details> 
+<summary>DevOps</summary>
 <div align="center">
 <a href="https://www.linux.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/linux-original.svg" alt="Linux" height="50" /></a>  
 <a href="https://github.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="50" /></a>  
@@ -62,14 +67,17 @@
 <a href="https://azure.microsoft.com/es-es/pricing/purchase-options/azure-account/search?icid=free-search&ef_id=_k_Cj0KCQjwvpy5BhDTARIsAHSilykDE-zwhbyrpSf-FqjqDs5Gc4iKf25C8-zDtONn1gdhNxR2Q1bnPmkaArUpEALw_wcB_k_&OCID=AIDcmm68ejnsa0_SEM__k_Cj0KCQjwvpy5BhDTARIsAHSilykDE-zwhbyrpSf-FqjqDs5Gc4iKf25C8-zDtONn1gdhNxR2Q1bnPmkaArUpEALw_wcB_k_&gad_source=1&gbraid=0AAAAADcJh_tEzWjsZ_XKr_MuOf2TSAhG5&gclid=Cj0KCQjwvpy5BhDTARIsAHSilykDE-zwhbyrpSf-FqjqDs5Gc4iKf25C8-zDtONn1gdhNxR2Q1bnPmkaArUpEALw_wcB" target="_blank"><img style="margin: 10px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" alt="Azure" height="50" /></a> 
 <a href="https://github.com/features/actions" target="_blank"><img style="margin: 10px" src="https://avatars.githubusercontent.com/u/44036562?s=200&v=4" alt="Actions" height="50" /></a> 
 <a href="https://kubernetes.io/es/docs/concepts/overview/what-is-kubernetes/" target="_blank"><img style="margin: 10px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/494px-Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes" height="50" /></a> 
+</details>
 </div>
 
 ---
 
-### Others
+<details> 
+<summary>Others</summary>
 <div align="center">
 <a href="https://www.latex-project.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/latex.png" alt="LaTeX" height="50" /></a>  
 <a href="https://www.postgresql.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="50" /></a>
 <a href="https://www.mongodb.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mongodb-original-wordmark.svg" alt="MongoDB" height="50" /></a>  
 <a href="https://www.mysql.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="MySQL" height="50" /></a>  
+</details>
 </div>
