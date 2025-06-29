@@ -1,0 +1,54 @@
+/* Badge Component Styles */
+.badge-container {
+  display: flex;
+  align-items: center;
+}
+
+.badge-wrapper {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 9999px; /* rounded-full */
+  padding: 1px;
+}
+
+.badge-border {
+  position: absolute;
+  inset: -1000%;
+  animation: spin 2s linear infinite;
+  background: conic-gradient(from 90deg at 50% 50%, #51E4B8 0%, #21554E 50%, #51E4B8 100%);
+}
+
+.badge-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.25rem 0.75rem; /* py-1 px-3 */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem;
+  color: #166534; /* text-green-800 */
+  background-color: #dcfce7; /* bg-green-100 */
+  border-radius: 9999px; /* rounded-full */
+  cursor: pointer;
+  backdrop-filter: blur(3rem); /* backdrop-blur-3xl */
+  white-space: nowrap;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .badge-content {
+    background-color: #1f2937; /* dark:bg-gray-800 */
+    color: rgba(255, 255, 255, 0.8); /* dark:text-white/80 */
+  }
+}
+
+/* Spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

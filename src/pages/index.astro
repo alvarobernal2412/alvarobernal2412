@@ -1,66 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Briefcase from "../components/icons/Briefcase.astro";
-import ProjectsIcon from "../components/icons/Projects.astro";
-import Projects from "../components/Projects.astro";
-import Hero from "../components/Hero.astro";
-import ProfileCheck from "../components/icons/ProfileCheck.astro";
-import AboutMe from "../components/AboutMe.astro";
-import Education from "../components/Education.astro";
-import Academy from "../components/icons/Academy.astro";
-
-const title =
-  "Porfolio de Álvaro Bernal - Ingeniero Software y Desarrollador Web";
-const description =
-  "Este es el porfolio de Álvaro Bernal. Aquí encontrarás información sobre mi experiencia profesional y proyectos personales.";
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title={title} , description={description}>
-  <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
-      <Hero />
-    </SectionContainer>
-    <div class="space-y-24">
-      <SectionContainer id="experiencia">
-        <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-        >
-          <Briefcase class="size-8" />
-          Experiencia Laboral
-        </h2>
-        <Experience />
-      </SectionContainer>
-
-      <SectionContainer id="formacion">
-        <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-        >
-          <Academy class="size-8" />
-          Formación Académica
-        </h2>
-        <Education />
-      </SectionContainer>
-
-      <SectionContainer id="proyectos">
-        <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-        >
-          <ProjectsIcon class="size-7" />
-          Proyectos
-        </h2>
-        <Projects />
-      </SectionContainer>
-      <SectionContainer id="sobre-mi">
-        <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-        >
-          <ProfileCheck class="size-8" />
-          Sobre mí
-        </h2>
-        <AboutMe />
-      </SectionContainer>
-    </div>
+<Layout title="Álvaro Bernal - Software Engineer & Technical Leader">
+  <Navigation />
+  <main>
+    <Hero />
+    <Experience />
+    <Education />
+    <Projects />
+    <About />
   </main>
+  <Footer />
 </Layout>

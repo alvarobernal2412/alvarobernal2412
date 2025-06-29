@@ -1,59 +1,276 @@
 ---
-const personalImageAlt = "Álvaro Bernal";
-import Badge from "./Badge.astro";
-import LinkedInIcon from "./icons/LinkedIn.astro";
-import MailIcon from "./icons/Mail.astro";
-import SocialPill from "./Social.astro";
-import Github from "./icons/Github.astro";
+import { Linkedin, Github, Mail, Download, ArrowRight, User } from 'lucide-astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Badge from "./icons/Badge.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16"
-      src="https://avatars.githubusercontent.com/u/80347035?v=4"
-      alt={personalImageAlt}
-    />
-    <a
-      href="https://linkedin.com/in/álvaro-bernal-a463a0269"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-      <Badge>Trabajando</Badge>
-    </a>
+<section id="hero" class="section hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <Badge>{t('hero.badge')}</Badge>
+        </div>
+        <h1 class="hero-name">{t('hero.name')}</h1>
+        <p class="hero-subtitle">{t('hero.subtitle')}</p>
+        <div class="hero-bio">
+          <p>{t('hero.bio')}</p>
+        </div>
+        <div class="hero-actions">
+          <a href="#experience" class="btn btn-primary">
+            {t('hero.viewWork')}
+            <ArrowRight size={16} />
+          </a>
+          <a href="/CV_AlvaroBernalCaunedo.pdf" class="btn btn-outline" target="_blank">
+            <Download size={16} />
+            {t('hero.downloadResume')}
+          </a>
+        </div>
+        <div class="hero-links">
+          <a href="https://linkedin.com/in/alvarobernalcau" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <Linkedin size={20} />
+          </a>
+          <a href="https://github.com/alvarobernal2412" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+            <Github size={20} />
+          </a>
+          <a href="mailto:alvarobc2412@gmail.com" class="social-link" aria-label="Email">
+            <Mail size={20} />
+          </a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-image">
+          <div class="profile-photo">
+            <img 
+            alt="Álvaro Bernal" 
+            class="profile-img"
+            src="https://avatars.githubusercontent.com/u/80347035?v=4"
+          />
+          </div>
+          <div class="image-decoration"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hola, soy Álvaro Bernal
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    <span>Soy una persona trabajadora, proactiva y con ganas de aprender.</span>
-    <span class="text-yellow-600 dark:text-yellow-200 font-bold"
-      >Me considero amable, organizado y capaz de conseguir cualquier cosa que
-      me proponga.
-    </span>Mis intereses actuales dentro del ámbito del software son<span
-      class="opacity-80"
-    >
-      la ingeniería cloud y la gestión de tecnologías y proyectos informáticos,
-      además, me gusta aprender idiomas y trabajar en equipo.</span
-    >
-  </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="https://linkedin.com/in/álvaro-bernal-a463a0269">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-    <SocialPill href="alvarobc2412@gmail.com">
-      <MailIcon class="size-4" />
-      Contáctame
-    </SocialPill>
-    <SocialPill href="https://github.com/alvarobernal2412">
-      <Github class="size-4" />
-      Github
-    </SocialPill>
-  </nav>
-</div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 7rem; /* Compensate for fixed navigation */
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(30, 64, 175, 0.05) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-left {
+    max-width: 600px;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .hero-bio {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-bio p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+  }
+
+  .social-link:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .photo-placeholder {
+    color: white;
+    opacity: 0.8;
+  }
+
+  .image-decoration {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content {
+      gap: 3rem;
+    }
+    
+    .hero-name {
+      font-size: 3rem;
+    }
+    
+    .hero-image {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .hero-right {
+      order: -1;
+    }
+    
+    .hero-badge {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .hero-name {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+    
+    .hero-bio p {
+      font-size: 1rem;
+    }
+    
+    .hero-image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-name {
+      font-size: 2rem;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+      max-width: 300px;
+    }
+  }
+</style>

@@ -17,7 +17,7 @@
         <h5>If you need help, don't hesitate to contact me clicking
            <a href="mailto:alvarobc2412@gmail.com?subject=Consulta%20desde%20GitHub&body=Escribe%20aquí%20tu%20cuerpo">here</a>
         </h5>
-        <a href="https://linkedin.com/in/álvaro-bernal-a463a0269" target="_blank">
+        <a href="https://linkedin.com/in/alvarobernalcau" target="_blank">
           <img src="https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" style="margin-bottom: 5px;" />
         </a>
       </div>
