@@ -1,197 +1,476 @@
 ---
-import Next from "./icons/Next.astro";
-import Tailwind from "./icons/Tailwind.astro";
-import LinkButton from "./LinkButton.astro";
-import File from "./icons/File.astro";
-import GitHub from "./icons/Github.astro";
-import Link from "./icons/Link.astro";
-import Css from "./icons/Css.astro";
-import Django from "./icons/Django.astro";
-import Docker from "./icons/Docker.astro";
-import Mysql from "./icons/Mysql.astro";
-import Nodered from "./icons/Nodered.astro";
-import React from "./icons/React.astro";
-import OpenAI from "./icons/Openai.astro";
-import Grafana from "./icons/Grafana.astro";
-import Jwt from "./icons/JWT.astro";
-import Express from "./icons/Express.astro";
-const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: Next,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-  CSS: {
-    name: "CSS",
-    class: "bg-[#264de4] text-white",
-    icon: Css,
-  },
-  DJANGO: {
-    name: "Django",
-    class: "bg-[#092e20] text-white",
-    icon: Django,
-  },
-  DOCKER: {
-    name: "Docker",
-    class: "bg-[#2496ed] text-white",
-    icon: Docker,
-  },
-  MYSQL: {
-    name: "MySQL",
-    class: "bg-[#00758f] text-white",
-    icon: Mysql,
-  },
-  NODERED: {
-    name: "Node-RED",
-    class: "bg-[#8f0000] text-white",
-    icon: Nodered,
-  },
-  REACT: {
-    name: "React",
-    class: "bg-[#61dafb] text-black",
-    icon: React,
-  },
-  OPENAI: {
-    name: "OpenAI API",
-    class: "bg-[#f0f0f0] text-black",
-    icon: OpenAI,
-  },
-  GRAFANA: {
-    name: "Grafana",
-    class: "bg-[#8E4E1E] text-white",
-    icon: Grafana,
-  },
-  JWT: {
-    name: "JWT",
-    class: "bg-[#303030] text-white",
-    icon: Jwt,
-  },
-  EXPRESS: {
-    name: "Express",
-    class: "bg-[#303030] text-white",
-    icon: Express,
-  },
-};
-const PROJECTS = [
-  {
-    title: "Harmony LTD",
-    description:
-      "Proyecto para la asignatura de Ingeniería del Software y Práctica Profesional de la Universidad de Sevilla. Se realizó un sistema de información para dos organizaciones sin ánimo de lucro (Asociación Tertulia Cofrade Cirio y Costal y Asociación Ciudadana de Ayuda al Toxicómano). Mi papel en este proyecto fue el de DevOps y Project Manager de un equipo de 17 estudiantes.",
-    link: "https://htld-doc.vercel.app",
-    image: "/projects/ispp.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-    github: "https://github.com/orgs/ISPP-07/repositories",
-  },
-  {
-    title: "STATUS (POC)",
-    description:
-      "Prueba de concepto orientada al desarrollo de un sistema de gestión de conformidad de procesos de negocios de la Universad de Sevilla. Mi papel en este proyecto es el de técnico especialista en un equipo de 4 personas.",
-    link: "https://status-landing-page.vercel.app",
-    image: "/projects/status.webp",
-    tags: [
-      TAGS.DOCKER,
-      TAGS.NODERED,
-      TAGS.REACT,
-      TAGS.MYSQL,
-      TAGS.CSS,
-      TAGS.GRAFANA,
-    ],
-    github: "https://github.com/orgs/statuscompliance/repositories",
-  },
-  {
-    title:
-      "Gestión inteligente de la conformidad en procesos mediante flujos en Node-RED (TFG)",
-    description:
-      "Desarrollo en individual de un chatbot de soporte para el modelado de flujos que miden la conformidad de procesos de negocio. Para ello, se ha utilizado la API de OpenAI para el procesamiento del lenguaje natural.",
-    link: "https://status-docs.netlify.app/docs/Tooling/openAI",
-    image: "/projects/chatbot.webp",
-    tags: [
-      TAGS.NODERED,
-      TAGS.OPENAI,
-      TAGS.REACT,
-      TAGS.CSS,
-      TAGS.JWT,
-      TAGS.EXPRESS,
-    ],
-    github: "https://github.com/statuscompliance/status-frontend",
-    file: "TFG_Alvbercau.pdf",
-  },
-  {
-    title: "Decide",
-    description:
-      "Aportación a la plataforma de voto electrónica 'decide' para la asignatura de Evolución y Gestión de la Configuración. Mi papel en este proyecto fue el de Desarrollador Full Stack y Project Manager de un equipo de 12 estudiantes.",
-    link: "https://github.com/EGC-23-24/decide-part-lorca/wiki/Documento-del-proyecto",
-    image: "/projects/decide.webp",
-    tags: [TAGS.DJANGO, TAGS.TAILWIND, TAGS.DOCKER],
-    github: "https://github.com/EGC-23-24/decide-part-lorca",
-  },
-];
+import { ExternalLink, Github, Calendar, Users, TrendingUp, Award } from 'lucide-astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github, file }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">{t('projects.title')}</h2>
+    <div class="projects-grid">
+      
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.compliance.name')}</h3>
+            <span class="badge badge-blue">{t('projects.items.compliance.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://htld-doc.vercel.app" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/orgs/ISPP-07/repositories" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
           </div>
         </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2 flex-wrap gap-y-1">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 whitespace-nowrap`}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
-            </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-              {file && (
-                <LinkButton href={file}>
-                  <File class="size-4" />
-                  File
-                </LinkButton>
-              )}
-            </footer>
+        
+        <p class="project-description">
+          {t('projects.items.compliance.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <Users size={16} />
+            <span>{t('projects.items.compliance.stats.team')}</span>
+          </div>
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.compliance.stats.efficiency')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.compliance.stats.duration')}</span>
           </div>
         </div>
-      </article>
-    ))
+        
+        <div class="project-tech">
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">Next</span>
+          <span class="tech-tag">Postgres</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Git & GitHub</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.compliance.achievements.0')}</li>
+            <li>{t('projects.items.compliance.achievements.1')}</li>
+            <li>{t('projects.items.compliance.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.erp.name')}</h3>
+            <span class="badge badge-green">{t('projects.items.erp.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://status-landing-page.vercel.app" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/orgs/statuscompliance/repositories" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          {t('projects.items.erp.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <Users size={16} />
+            <span>{t('projects.items.erp.stats.users')}</span>
+          </div>
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.erp.stats.performance')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.erp.stats.duration')}</span>
+          </div>
+        </div>
+        
+        <div class="project-tech">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Grafana</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">CI/CD</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.erp.achievements.0')}</li>
+            <li>{t('projects.items.erp.achievements.1')}</li>
+            <li>{t('projects.items.erp.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.devops.name')}</h3>
+            <span class="badge badge-purple">{t('projects.items.devops.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://status-docs.netlify.app/docs/Tooling/openAI" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/statuscompliance/status-frontend" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          {t('projects.items.devops.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <Award size={16} />
+            <span>{t('projects.items.devops.stats.environment')}</span>
+          </div>
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.devops.stats.deployment')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.devops.stats.duration')}</span>
+          </div>
+        </div>
+        
+        <div class="project-tech">
+          <span class="tech-tag">Node-RED</span>
+          <span class="tech-tag">OpenAI API</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Node.js</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.devops.achievements.0')}</li>
+            <li>{t('projects.items.devops.achievements.1')}</li>
+            <li>{t('projects.items.devops.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.gateway.name')}</h3>
+            <span class="badge badge-orange">{t('projects.items.gateway.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://cloudmedixgp.netlify.app/" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/FIS2425/workshift-svc" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          {t('projects.items.gateway.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.gateway.stats.requests')}</span>
+          </div>
+          <div class="stat-item">
+            <Award size={16} />
+            <span>{t('projects.items.gateway.stats.uptime')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.gateway.stats.duration')}</span>
+          </div>
+        </div>
+        
+        <div class="project-tech">
+          <span class="tech-tag">Rust</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Microservices</span>
+          <span class="tech-tag">API Gateway</span>
+          <span class="tech-tag">Vite</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.gateway.achievements.0')}</li>
+            <li>{t('projects.items.gateway.achievements.1')}</li>
+            <li>{t('projects.items.gateway.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
   }
-</div>
+
+  .project-card {
+    position: relative;
+    height: fit-content;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .project-meta {
+    flex: 1;
+  }
+
+  .project-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    background: var(--surface-alt);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+  }
+
+  .project-link:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+
+  .stat-item svg {
+    color: var(--primary);
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--surface-alt);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .tech-tag:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .project-highlights {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .highlights-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .highlights-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .highlights-list li {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    position: relative;
+    padding-left: 1rem;
+    line-height: 1.5;
+  }
+
+  .highlights-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+  }
+
+  /* Badge variants */
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-blue {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+  }
+
+  .badge-green {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+
+  .badge-purple {
+    background: #f3e8ff;
+    color: #7c3aed;
+    border: 1px solid #c4b5fd;
+  }
+
+  .badge-orange {
+    background: #fed7aa;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+  }
+
+  /* Dark mode support for badges */
+  @media (prefers-color-scheme: dark) {
+    .badge-blue {
+      background: #1e3a8a;
+      color: #93c5fd;
+      border-color: #3b82f6;
+    }
+
+    .badge-green {
+      background: #14532d;
+      color: #86efac;
+      border-color: #22c55e;
+    }
+
+    .badge-purple {
+      background: #581c87;
+      color: #c4b5fd;
+      border-color: #8b5cf6;
+    }
+
+    .badge-orange {
+      background: #9a3412;
+      color: #fdba74;
+      border-color: #f97316;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .project-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .project-links {
+      align-self: flex-end;
+    }
+    
+    .project-stats {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .project-name {
+      font-size: 1.125rem;
+    }
+    
+    .project-stats {
+      gap: 0.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,389 @@
+---
+import { Target, Rocket, Users, TrendingUp, Award, Heart, User } from 'lucide-astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">{t('about.title')}</h2>
+    <div class="about-content">
+      <div class="about-left">
+        <div class="about-image">
+          <div class="profile-photo">
+            <img src="/me.webp" alt="Profile" class="profile-img" />
+          </div>
+          <div class="status-card card">
+            <h3 class="status-title">{t('about.currentStatus')}</h3>
+            <div class="status-items">
+              <div class="status-item">
+                <span class="status-label">{t('about.status.focus')}</span>
+                <span class="status-value">{t('about.status.focusValue')}</span>
+              </div>
+              <div class="status-item">
+                <span class="status-label">{t('about.status.mode')}</span>
+                <span class="status-value">{t('about.status.modeValue')}</span>
+              </div>
+              <div class="status-item">
+                <span class="status-label">{t('about.status.availability')}</span>
+                <span class="status-value">{t('about.status.availabilityValue')}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-right">
+        <div class="about-sections">
+          
+          <div class="about-section">
+            <div class="section-header">
+              <div class="section-icon">
+                <Heart size={20} />
+              </div>
+              <h3 class="subsection-title">{t('about.sections.drive.title')}</h3>
+            </div>
+            <p class="section-content">
+              {t('about.sections.drive.content')}
+            </p>
+          </div>
+
+          <div class="about-section">
+            <div class="section-header">
+              <div class="section-icon">
+                <Users size={20} />
+              </div>
+              <h3 class="subsection-title">{t('about.sections.leadership.title')}</h3>
+            </div>
+            <p class="section-content">
+              {t('about.sections.leadership.content')}
+            </p>
+          </div>
+
+          <div class="about-section">
+            <div class="section-header">
+              <div class="section-icon">
+                <Rocket size={20} />
+              </div>
+              <h3 class="subsection-title">{t('about.sections.vision.title')}</h3>
+            </div>
+            <p class="section-content">
+              {t('about.sections.vision.content')}
+            </p>
+          </div>
+
+          <div class="values-section">
+            <h3 class="values-title">{t('about.coreValues')}</h3>
+            <div class="values-grid">
+              <div class="value-item">
+                <div class="value-icon">
+                  <Target size={24} />
+                </div>
+                <div class="value-content">
+                  <h4 class="value-name">{t('about.values.precision.name')}</h4>
+                  <p class="value-description">{t('about.values.precision.description')}</p>
+                </div>
+              </div>
+              
+              <div class="value-item">
+                <div class="value-icon">
+                  <Rocket size={24} />
+                </div>
+                <div class="value-content">
+                  <h4 class="value-name">{t('about.values.innovation.name')}</h4>
+                  <p class="value-description">{t('about.values.innovation.description')}</p>
+                </div>
+              </div>
+              
+              <div class="value-item">
+                <div class="value-icon">
+                  <Users size={24} />
+                </div>
+                <div class="value-content">
+                  <h4 class="value-name">{t('about.values.collaboration.name')}</h4>
+                  <p class="value-description">{t('about.values.collaboration.description')}</p>
+                </div>
+              </div>
+              
+              <div class="value-item">
+                <div class="value-icon">
+                  <TrendingUp size={24} />
+                </div>
+                <div class="value-content">
+                  <h4 class="value-name">{t('about.values.growth.name')}</h4>
+                  <p class="value-description">{t('about.values.growth.description')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-left {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-image {
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    box-shadow: var(--shadow-xl);
+  }
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .photo-placeholder {
+    color: white;
+    opacity: 0.8;
+  }
+
+  .status-card {
+    padding: 1.5rem;
+  }
+
+  .status-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .status-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .status-item:last-child {
+    border-bottom: none;
+  }
+
+  .status-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .status-value {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.875rem;
+  }
+
+  .about-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .about-section {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .about-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .subsection-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+
+  .section-content {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+
+  .values-section {
+    margin-top: 1rem;
+  }
+
+  .values-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .value-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .value-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+
+  .value-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--surface-alt);
+    color: var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .value-content {
+    flex: 1;
+  }
+
+  .value-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .about-left {
+      position: static;
+      order: 2;
+    }
+    
+    .about-right {
+      order: 1;
+    }
+    
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      gap: 2rem;
+    }
+    
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .section-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+    
+    .value-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .value-icon {
+      align-self: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-sections {
+      gap: 2rem;
+    }
+    
+    .status-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    
+    .values-title {
+      font-size: 1.25rem;
+    }
+  }
+</style>
