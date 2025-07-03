@@ -1,220 +1,228 @@
 ---
 import { ExternalLink, Github, Calendar, Users, TrendingUp, Award } from 'lucide-astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="projects" class="section">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title">{t('projects.title')}</h2>
     <div class="projects-grid">
       
       <div class="project-card card">
         <div class="project-header">
           <div class="project-meta">
-            <h3 class="project-name">Compliance Management System</h3>
-            <span class="badge badge-primary">Lead Developer</span>
+            <h3 class="project-name">{t('projects.items.compliance.name')}</h3>
+            <span class="badge badge-blue">{t('projects.items.compliance.badge')}</span>
           </div>
           <div class="project-links">
-            <a href="#" class="project-link" aria-label="View project">
+            <a href="https://htld-doc.vercel.app" class="project-link" aria-label={t('projects.viewProject')}>
               <ExternalLink size={18} />
             </a>
-            <a href="#" class="project-link" aria-label="View source code">
+            <a href="https://github.com/orgs/ISPP-07/repositories" class="project-link" aria-label={t('projects.viewSource')}>
               <Github size={18} />
             </a>
           </div>
         </div>
         
         <p class="project-description">
-          Enterprise compliance management system with automated workflows and real-time monitoring capabilities. Led development from concept to production deployment.
+          {t('projects.items.compliance.description')}
         </p>
         
         <div class="project-stats">
           <div class="stat-item">
             <Users size={16} />
-            <span>5-person team</span>
+            <span>{t('projects.items.compliance.stats.team')}</span>
           </div>
           <div class="stat-item">
             <TrendingUp size={16} />
-            <span>30% efficiency gain</span>
+            <span>{t('projects.items.compliance.stats.efficiency')}</span>
           </div>
           <div class="stat-item">
             <Calendar size={16} />
-            <span>12 months</span>
+            <span>{t('projects.items.compliance.stats.duration')}</span>
           </div>
         </div>
         
         <div class="project-tech">
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">Next</span>
+          <span class="tech-tag">Postgres</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Git & GitHub</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.compliance.achievements.0')}</li>
+            <li>{t('projects.items.compliance.achievements.1')}</li>
+            <li>{t('projects.items.compliance.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.erp.name')}</h3>
+            <span class="badge badge-green">{t('projects.items.erp.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://status-landing-page.vercel.app" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/orgs/statuscompliance/repositories" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          {t('projects.items.erp.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <Users size={16} />
+            <span>{t('projects.items.erp.stats.users')}</span>
+          </div>
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.erp.stats.performance')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.erp.stats.duration')}</span>
+          </div>
+        </div>
+        
+        <div class="project-tech">
+          <span class="tech-tag">Node.js</span>
           <span class="tech-tag">React</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">AWS</span>
-        </div>
-        
-        <div class="project-highlights">
-          <h4 class="highlights-title">Key Achievements</h4>
-          <ul class="highlights-list">
-            <li>Designed microservices architecture</li>
-            <li>Implemented automated testing pipeline</li>
-            <li>Reduced deployment time by 60%</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="project-card card">
-        <div class="project-header">
-          <div class="project-meta">
-            <h3 class="project-name">Enterprise Resource Planning</h3>
-            <span class="badge badge-secondary">Full-Stack Architect</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link" aria-label="View project">
-              <ExternalLink size={18} />
-            </a>
-            <a href="#" class="project-link" aria-label="View source code">
-              <Github size={18} />
-            </a>
-          </div>
-        </div>
-        
-        <p class="project-description">
-          Comprehensive ERP system with advanced analytics and automated reporting features for mid-size enterprises. Focused on scalability and user experience.
-        </p>
-        
-        <div class="project-stats">
-          <div class="stat-item">
-            <Users size={16} />
-            <span>500+ users</span>
-          </div>
-          <div class="stat-item">
-            <TrendingUp size={16} />
-            <span>40% performance boost</span>
-          </div>
-          <div class="stat-item">
-            <Calendar size={16} />
-            <span>18 months</span>
-          </div>
-        </div>
-        
-        <div class="project-tech">
-          <span class="tech-tag">Vue.js</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Django</span>
-          <span class="tech-tag">Redis</span>
-          <span class="tech-tag">MySQL</span>
-        </div>
-        
-        <div class="project-highlights">
-          <h4 class="highlights-title">Key Achievements</h4>
-          <ul class="highlights-list">
-            <li>Built real-time analytics dashboard</li>
-            <li>Implemented role-based access control</li>
-            <li>Optimized database performance</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="project-card card">
-        <div class="project-header">
-          <div class="project-meta">
-            <h3 class="project-name">DevOps Pipeline Automation</h3>
-            <span class="badge badge-secondary">DevOps Engineer</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link" aria-label="View documentation">
-              <ExternalLink size={18} />
-            </a>
-            <a href="#" class="project-link" aria-label="View source code">
-              <Github size={18} />
-            </a>
-          </div>
-        </div>
-        
-        <p class="project-description">
-          Comprehensive CI/CD pipeline with automated testing, security scanning, and multi-environment deployment capabilities for enterprise applications.
-        </p>
-        
-        <div class="project-stats">
-          <div class="stat-item">
-            <Award size={16} />
-            <span>Multi-environment</span>
-          </div>
-          <div class="stat-item">
-            <TrendingUp size={16} />
-            <span>60% faster deploys</span>
-          </div>
-          <div class="stat-item">
-            <Calendar size={16} />
-            <span>6 months</span>
-          </div>
-        </div>
-        
-        <div class="project-tech">
-          <span class="tech-tag">Jenkins</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Kubernetes</span>
-          <span class="tech-tag">Terraform</span>
-          <span class="tech-tag">AWS</span>
-        </div>
-        
-        <div class="project-highlights">
-          <h4 class="highlights-title">Key Achievements</h4>
-          <ul class="highlights-list">
-            <li>Automated security scanning</li>
-            <li>Zero-downtime deployments</li>
-            <li>Infrastructure as code</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="project-card card">
-        <div class="project-header">
-          <div class="project-meta">
-            <h3 class="project-name">Microservices API Gateway</h3>
-            <span class="badge badge-secondary">Backend Architect</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link" aria-label="View project">
-              <ExternalLink size={18} />
-            </a>
-            <a href="#" class="project-link" aria-label="View source code">
-              <Github size={18} />
-            </a>
-          </div>
-        </div>
-        
-        <p class="project-description">
-          Scalable API gateway with authentication, rate limiting, and monitoring capabilities. Designed to handle high-traffic enterprise applications.
-        </p>
-        
-        <div class="project-stats">
-          <div class="stat-item">
-            <TrendingUp size={16} />
-            <span>10k+ req/min</span>
-          </div>
-          <div class="stat-item">
-            <Award size={16} />
-            <span>99.9% uptime</span>
-          </div>
-          <div class="stat-item">
-            <Calendar size={16} />
-            <span>8 months</span>
-          </div>
-        </div>
-        
-        <div class="project-tech">
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">Express</span>
           <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Grafana</span>
           <span class="tech-tag">Redis</span>
-          <span class="tech-tag">Nginx</span>
+          <span class="tech-tag">CI/CD</span>
         </div>
         
         <div class="project-highlights">
-          <h4 class="highlights-title">Key Achievements</h4>
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
           <ul class="highlights-list">
-            <li>Implemented JWT authentication</li>
-            <li>Built rate limiting system</li>
-            <li>Created monitoring dashboard</li>
+            <li>{t('projects.items.erp.achievements.0')}</li>
+            <li>{t('projects.items.erp.achievements.1')}</li>
+            <li>{t('projects.items.erp.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.devops.name')}</h3>
+            <span class="badge badge-purple">{t('projects.items.devops.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://status-docs.netlify.app/docs/Tooling/openAI" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/statuscompliance/status-frontend" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          {t('projects.items.devops.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <Award size={16} />
+            <span>{t('projects.items.devops.stats.environment')}</span>
+          </div>
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.devops.stats.deployment')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.devops.stats.duration')}</span>
+          </div>
+        </div>
+        
+        <div class="project-tech">
+          <span class="tech-tag">Node-RED</span>
+          <span class="tech-tag">OpenAI API</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Node.js</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.devops.achievements.0')}</li>
+            <li>{t('projects.items.devops.achievements.1')}</li>
+            <li>{t('projects.items.devops.achievements.2')}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-header">
+          <div class="project-meta">
+            <h3 class="project-name">{t('projects.items.gateway.name')}</h3>
+            <span class="badge badge-orange">{t('projects.items.gateway.badge')}</span>
+          </div>
+          <div class="project-links">
+            <a href="https://cloudmedixgp.netlify.app/" class="project-link" aria-label={t('projects.viewProject')}>
+              <ExternalLink size={18} />
+            </a>
+            <a href="https://github.com/FIS2425/workshift-svc" class="project-link" aria-label={t('projects.viewSource')}>
+              <Github size={18} />
+            </a>
+          </div>
+        </div>
+        
+        <p class="project-description">
+          {t('projects.items.gateway.description')}
+        </p>
+        
+        <div class="project-stats">
+          <div class="stat-item">
+            <TrendingUp size={16} />
+            <span>{t('projects.items.gateway.stats.requests')}</span>
+          </div>
+          <div class="stat-item">
+            <Award size={16} />
+            <span>{t('projects.items.gateway.stats.uptime')}</span>
+          </div>
+          <div class="stat-item">
+            <Calendar size={16} />
+            <span>{t('projects.items.gateway.stats.duration')}</span>
+          </div>
+        </div>
+        
+        <div class="project-tech">
+          <span class="tech-tag">Rust</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Microservices</span>
+          <span class="tech-tag">API Gateway</span>
+          <span class="tech-tag">Vite</span>
+        </div>
+        
+        <div class="project-highlights">
+          <h4 class="highlights-title">{t('projects.keyAchievements')}</h4>
+          <ul class="highlights-list">
+            <li>{t('projects.items.gateway.achievements.0')}</li>
+            <li>{t('projects.items.gateway.achievements.1')}</li>
+            <li>{t('projects.items.gateway.achievements.2')}</li>
           </ul>
         </div>
       </div>
@@ -365,6 +373,68 @@ import { ExternalLink, Github, Calendar, Users, TrendingUp, Award } from 'lucide
     left: 0;
     color: var(--success);
     font-weight: bold;
+  }
+
+  /* Badge variants */
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-blue {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+  }
+
+  .badge-green {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+
+  .badge-purple {
+    background: #f3e8ff;
+    color: #7c3aed;
+    border: 1px solid #c4b5fd;
+  }
+
+  .badge-orange {
+    background: #fed7aa;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+  }
+
+  /* Dark mode support for badges */
+  @media (prefers-color-scheme: dark) {
+    .badge-blue {
+      background: #1e3a8a;
+      color: #93c5fd;
+      border-color: #3b82f6;
+    }
+
+    .badge-green {
+      background: #14532d;
+      color: #86efac;
+      border-color: #22c55e;
+    }
+
+    .badge-purple {
+      background: #581c87;
+      color: #c4b5fd;
+      border-color: #8b5cf6;
+    }
+
+    .badge-orange {
+      background: #9a3412;
+      color: #fdba74;
+      border-color: #f97316;
+    }
   }
 
   @media (max-width: 1024px) {

@@ -133,7 +133,7 @@ export const translations = {
         },
         erp: {
           name: "STATUS (POC)",
-          badge: "Technical Specialist",
+          badge: "Software Engineer",
           description: "Proof of concept for developing a business process compliance management system at Universidad de Sevilla. Working as a technical specialist in a team of 4 people.",
           stats: {
             users: "Business processes",
@@ -162,18 +162,18 @@ export const translations = {
           ]
         },
         gateway: {
-          name: "Decide",
-          badge: "Full Stack Developer & PM",
-          description: "Contribution to the 'decide' electronic voting platform for Evolution and Configuration Management course. Worked as Full Stack Developer and Project Manager leading a team of 12 students.",
+          name: "CloudMedix",
+          badge: "Microservices Developer & Project Manager",
+          description: "Health management platform using microservices, AI and automation. Developed appointment and work shift management services with modern architecture for scalability and efficiency in clinical operations.",
           stats: {
-            requests: "Electronic voting",
-            uptime: "12-person team",
-            duration: "Academic semester"
+            requests: "2 microservices",
+            uptime: "Rust + Docker",
+            duration: "Academic project"
           },
           achievements: [
-            "Led full-stack development team",
-            "Managed project configuration and evolution",
-            "Implemented Django-based voting system"
+            "Developed appointment management microservice",
+            "Built work shift management system",
+            "Implemented microservices architecture with API Gateway"
           ]
         }
       }
@@ -377,7 +377,7 @@ export const translations = {
         },
         erp: {
           name: "STATUS (POC)",
-          badge: "Técnico Especialista",
+          badge: "Software Engineer",
           description: "Prueba de concepto para el desarrollo de un sistema de gestión de conformidad de procesos de negocio de la Universidad de Sevilla. Trabajo como técnico especialista en un equipo de 4 personas.",
           stats: {
             users: "Procesos de negocio",
@@ -406,18 +406,18 @@ export const translations = {
           ]
         },
         gateway: {
-          name: "Decide",
-          badge: "Desarrollador Full Stack y PM",
-          description: "Aportación a la plataforma de voto electrónico 'decide' para la asignatura de Evolución y Gestión de la Configuración. Trabajé como Desarrollador Full Stack y Project Manager liderando un equipo de 12 estudiantes.",
+          name: "CloudMedix",
+          badge: "Desarrollador y Project Manager",
+          description: "Plataforma de gestión de salud utilizando microservicios, IA y automatización. Desarrollé servicios de gestión de citas y turnos laborales con arquitectura moderna para escalabilidad y eficiencia en operaciones clínicas.",
           stats: {
-            requests: "Voto electrónico",
-            uptime: "Equipo de 12 personas",
-            duration: "Semestre académico"
+            requests: "2 microservicios",
+            uptime: "Rust + Docker",
+            duration: "Proyecto académico"
           },
           achievements: [
-            "Lideré equipo de desarrollo full-stack",
-            "Gestioné configuración y evolución del proyecto",
-            "Implementé sistema de votación basado en Django"
+            "Desarrollé microservicio de gestión de citas",
+            "Construí sistema de gestión de turnos laborales",
+            "Implementé arquitectura de microservicios con API Gateway"
           ]
         }
       }
