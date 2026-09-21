@@ -1,493 +1,480 @@
-export const translations = {
-  en: {
-    // Navigation
-    nav: {
-      home: "Home",
-      experience: "Experience",
-      education: "Education",
-      projects: "Projects",
-      about: "About"
-    },
-    // Language names
-    languages: {
-      english: "English",
-      spanish: "Spanish"
-    },
-    // Hero Section
-    hero: {
-      badge: "Working",
-      name: "Hello, I'm Álvaro Bernal",
-      subtitle: "Software Engineer | Cloud Infrastructure | Technical Leader",
-      bio: "I am a hardworking, proactive person eager to learn. I consider myself kind, organized and capable of achieving anything I set my mind to. My current interests within the software field are cloud engineering and IT project management. I also enjoy learning languages and working in teams.",
-      viewWork: "View My Work",
-      downloadResume: "Download Resume"
-    },
-    // Experience Section
-    experience: {
-      title: "Professional Experience",
-      current: "Present",
-      remote: "Remote",
-      hybrid: "Hybrid",
-      jobs: {
-        junior: {
-          title: "Junior Software Engineer",
-          company: "Dept. of Computer Languages and Systems - Universidad de Sevilla",
-          project: "Compliance Management System",
-          description: "Development of a mashup-based compliance management system. The system allows users to manage compliance with standards such as ISO, GDPR and software development methodologies. My role in this project was Full-Stack Developer.",
-          achievements: {
-            title: "Key Achievements",
-            items: [
-              "Developed compliance management platform",
-              "Led Integration of OpenAI-Powered Conversational Assistant",
-              "Built and Optimized a Cross-Platform CI/CD Pipeline",
-              "Established a Robust Testing Culture with High Coverage"
-            ]
-          },
-          technologies: "Technologies"
-        },
-        us: {
-          title: "Software Engineer",
-          company: "Dept. of Computer Languages and Systems - Universidad de Sevilla",
-          project: "Compliance Management System",
-          description: "Project stage aimed at achieving TRL 7. Specifically, implementation in companies in the technology sector and validation of the tools with companies that carry out regulatory compliance audits (National Security Scheme, ISO 27001 and LOPDGDD). My role in this phase of the project was Team Leader, actively monitoring the proposed milestones and aligning the technical objectives with the strategic objectives of the project.",
-          achievements: {
-            title: "Key Achievements",
-            items: [
-              "Enabled Real-Time Compliance Monitoring through System Mashups",
-              "Led Pilot Integration with Tech Sector Companies for Real-World Validation",
-              "Directed the Audit Validation Process with Compliance Experts",
-            ]
-          },
-          technologies: "Technologies"
-        }
-      }
-    },
-    // Education Section
-    education: {
-      title: "Education & Certifications",
-      inProgress: "In Progress",
-      completed: "Completed",
-      certified: "Certified",
-      degrees: {
-        masters: {
-          title: "Master in Cloud Engineering, Data and IT Management",
-          institution: "Escuela Internacional de Posgrado",
-          description: "Specializing in cloud infrastructure, data management, and IT project management.",
-          keyAreas: "Key Areas",
-          areas: [
-            "Cloud Infrastructure",
-            "Business Management and Administration",
-            "Unstructured Information Analysis",
-            "Project Management",
-            "CRM and ERP"
-          ]
-        },
-        bachelors: {
-          title: "Bachelor's in Computer Engineering - Software Engineering",
-          institution: "Escuela Técnica Superior de Ingeniería Informática",
-          description: "Comprehensive foundation in software engineering, computer science fundamentals, and software development methodologies.",
-          coreSubjects: "Core Subjects",
-          subjects: [
-            "Algorithm Analysis and Design",
-            "Software Project Management",
-            "Software Architecture",
-            "Software Quality and Testing"
-          ]
-        }
-      },
-      certifications: {
-        title: "Professional Certifications",
-        deutsch: {
-          name: "Stufe 1 Deutsch (A1)",
-          issuer: "Instituto de Idiomas",
-          description: "Basic German language certification for professional contexts."
-        },
-        english: {
-          name: "Advanced English C1",
-          issuer: "Cambridge English Language Assessment",
-          description: "Advanced proficiency in English for professional contexts."
-        }
-      }
-    },
-    // Projects Section
-    projects: {
-      title: "Featured Projects",
-      viewProject: "View project",
-      viewSource: "View source code",
-      keyAchievements: "Key Achievements",
-      items: {
-        compliance: {
-          name: "Harmony LTD",
-          badge: "DevOps & Project Manager",
-          description: "Information system project for Software Engineering and Professional Practice course at Universidad de Sevilla. Developed for two non-profit organizations (Asociación Tertulia Cofrade Cirio y Costal and Asociación Ciudadana de Ayuda al Toxicómano). Led a team of 17 students.",
-          stats: {
-            team: "17-person team",
-            efficiency: "DevOps leadership",
-            duration: "Academic year"
-          },
-          achievements: [
-            "Led a multidisciplinary team of 17 students",
-            "Managed DevOps processes and deployment pipelines",
-            "Coordinated development for two non-profit organizations"
-          ]
-        },
-        erp: {
-          name: "STATUS (POC)",
-          badge: "Software Engineer",
-          description: "Proof of concept for developing a business process compliance management system at Universidad de Sevilla. Working as a technical specialist in a team of 4 people.",
-          stats: {
-            users: "Business processes",
-            performance: "Compliance management",
-            duration: "Ongoing project"
-          },
-          achievements: [
-            "Developed compliance measurement systems",
-            "Implemented Docker containerization",
-            "Built real-time monitoring with Grafana"
-          ]
-        },
-        devops: {
-          name: "Intelligent Compliance Management (TFG)",
-          badge: "Individual Developer",
-          description: "Individual development of a support chatbot for modeling flows that measure business process compliance. Used OpenAI API for natural language processing.",
-          stats: {
-            environment: "Node-RED flows",
-            deployment: "OpenAI integration",
-            duration: "Bachelor's thesis"
-          },
-          achievements: [
-            "Integrated OpenAI API for natural language processing",
-            "Developed intelligent chatbot for process modeling",
-            "Created comprehensive documentation"
-          ]
-        },
-        gateway: {
-          name: "CloudMedix",
-          badge: "Microservices Developer & Project Manager",
-          description: "Health management platform using microservices, AI and automation. Developed appointment and work shift management services with modern architecture for scalability and efficiency in clinical operations.",
-          stats: {
-            requests: "2 microservices",
-            uptime: "Rust + Docker",
-            duration: "Academic project"
-          },
-          achievements: [
-            "Developed appointment management microservice",
-            "Built work shift management system",
-            "Implemented microservices architecture with API Gateway"
-          ]
-        }
-      }
-    },
-    // About Section
-    about: {
-      title: "About Me",
-      currentStatus: "Current Status",
-      status: {
-        focus: "Focus:",
-        focusValue: "Technical Leadership",
-        mode: "Mode:",
-        modeValue: "Learning & Growing",
-        availability: "Availability:",
-        availabilityValue: "Open to Opportunities"
-      },
-      sections: {
-        drive: {
-          title: "Personal Drive",
-          content: "My journey in software engineering began with curiosity and evolved into a passion for creating systems that solve real-world problems. I'm driven by the challenge of architecting solutions that not only function flawlessly but also inspire teams to achieve their best work.",
-        },
-        leadership: {
-          title: "Professional Goals",
-          content: "Some of my long-term goals include increasing my knowledge and experience in the software engineering sector. In the professional field, my goal is to grow vertically within the company, taking on greater responsibilities and contributing significant added value."
-        },
-        vision: {
-          title: "Personal Development",
-          content: "I strive to continuously improve my interpersonal skills, recognizing the importance of soft skills in leadership and effective collaboration. My current interests within the software field are cloud engineering and IT project management, and I also enjoy learning languages and working in teams."
-        }
-      },
-      coreValues: "Core Values",
-      values: {
-        precision: {
-          name: "Precision",
-          description: "Aligning implementation with requirements from the start"
-        },
-        innovation: {
-          name: "Innovation",
-          description: "Embracing new technologies and methodologies"
-        },
-        collaboration: {
-          name: "Collaboration",
-          description: "Building strong, effective teams"
-        },
-        growth: {
-          name: "Growth",
-          description: "Continuous learning and improvement"
-        }
-      }
-    },
-    // Footer Section
-    footer: {
-      description: "Building the future through thoughtful engineering and strategic leadership.",
-      navigation: "Navigation",
-      getInTouch: "Get In Touch",
-      contactText: "Open to discussing leadership opportunities and technical challenges.",
-      contactMe: "Contact Me",
-      copyright: "All rights reserved.",
-      lastUpdated: "Last updated: June 2025",
-      version: "Version 2.1.0",
-      backToTop: "Back to top"
-    },
-    // Common
-    common: {
-      readMore: "Read More",
-      learnMore: "Learn More",
-      contactMe: "Contact Me"
-    }
+const en = {
+  langName: 'English',
+  nav: { work: 'Work', artifact: 'Live artifact', experience: 'Experience', publications: 'Publications', projects: 'Projects', education: 'Education', about: 'About' },
+  hero: {
+    badge: 'PhD Student · University of St. Gallen',
+    role: 'PhD Student in Computer Science at HSG, St. Gallen — researching process mining. Teaching Assistant in Advanced Software and Systems Engineering.',
+    tagline: 'Bridging human-in-the-loop analytic provenance with high-performance process discovery engines — after three years building compliance systems in production.',
+    cv: 'CV / Résumé',
+    contact: 'Contact',
+    photoAlt: 'Álvaro Bernal',
   },
-  es: {
-    // Navigation
-    nav: {
-      home: "Inicio",
-      experience: "Experiencia",
-      education: "Educación",
-      projects: "Proyectos",
-      about: "Sobre Mí"
+  track: {
+    title: 'Triple track',
+    sub: 'research · systems · teaching',
+    research: {
+      kicker: 'Research focus',
+      title: 'Analytic provenance in exploratory process mining',
+      body: 'I capture and model the how and why of analyst decision-making: event-log interactions, filter and abstraction choices, and the branching trajectories that lead to a discovered model. The result is a reusable provenance tree that makes exploratory findings reproducible, auditable and teachable.',
+      tags: ['provenance trees', 'interaction logging', 'process discovery', 'HSG · St. Gallen'],
     },
-    // Language names
-    languages: {
-      english: "Inglés",
-      spanish: "Español"
+    systems: {
+      kicker: 'Systems engineering',
+      title: 'Compliance platforms and event-log pipelines that ship',
+      body: 'Three years of full-stack and cloud work on a compliance management system taken to TRL 7 — real-time monitoring mashups, CI/CD across platforms, and teams led to delivery.',
+      metrics: { years: 'on the compliance system', team: 'largest team led', trl: 'system maturity', projects: 'featured projects' },
     },
-    // Hero Section
-    hero: {
-      badge: "Trabajando",
-      name: "Hola, soy Álvaro Bernal",
-      subtitle: "Ingeniero de Software | Infraestructura Cloud | Líder Técnico",
-      bio: "Soy una persona trabajadora, proactiva y con ganas de aprender. Me considero amable, organizado y capaz de conseguir cualquier cosa que me proponga. Mis intereses actuales dentro del ámbito del software son la ingeniería cloud y la gestión de proyectos TI. Además, me gusta aprender idiomas y trabajar en equipo.",
-      viewWork: "Ver Mi Trabajo",
-      downloadResume: "Descargar CV"
+    teaching: {
+      kicker: 'Teaching',
+      chip: 'ASSE · Teaching Assistant',
+      title: 'Advanced Software & Systems Engineering',
+      body: 'Tutorials, lab reviews and code critique for graduate students — design patterns, software architecture, distributed systems and testing discipline at production grade.',
+      tags: ['design patterns', 'architecture', 'distributed systems'],
     },
-    // Experience Section
-    experience: {
-      title: "Experiencia Profesional",
-      current: "Presente",
-      remote: "Remoto",
-      hybrid: "Híbrido",
-      jobs: {
-        junior: {
-          title: "Ingeniero de Software Junior",
-          company: "Dpto. Lenguajes y Sistemas Informáticos - Universidad de Sevilla",
-          project: "Sistema de Gestión de Cumplimiento",
-          description: "Desarrollo de un sistema de gestión de conformidad basado en mashups. El sistema permite a los usuarios gestionar el cumplimiento de normas como ISO, GDPR y metodologías de desarrollo de software. Mi rol en este proyecto fue Desarrollador Full-Stack.",
-          achievements: {
-            title: "Logros Clave",
-            items: [
-              "Desarrollo de una plataforma de gestión de cumplimiento",
-              "Integración de un asistente potenciado por OpenAI",
-              "Construcción y optimización de un pipeline CI/CD multiplataforma",
-              "Cultura de testing robusta con alta cobertura"
-            ]
-          },
-          technologies: "Tecnologías"
-        },
-        us: {
-          title: "Ingeniero de Software",
-          company: "Dpto. Lenguajes y Sistemas Informáticos - Universidad de Sevilla",
-          project: "Sistema de Gestión de Cumplimiento",
-          description: "Etapa del proyecto orientada a alcanzar TRL 7. Específicamente, implementación en empresas del sector tecnológico y validación de las herramientas con empresas que realizan auditorías de cumplimiento normativo (Esquema Nacional de Seguridad, ISO 27001 y LOPDGDD). Mi rol en esta fase del proyecto fue Team Leader, realizando seguimiento activo de los hitos propuestos y alineando los objetivos técnicos con los objetivos estratégicos del proyecto.",
-          achievements: {
-            title: "Logros Clave",
-            items: [
-              "Monitorización de cumplimiento en tiempo real de una forma low-code",
-              "Implantación con empresas del sector tecnológico para conseguir una validación real",
-              "Validación de auditorías con expertos en cumplimiento normativo"
-            ]
-          },
-          technologies: "Tecnologías"
-        }
-      }
+  },
+  artifact: {
+    title: 'Live artifact',
+    hint: 'click a step to replay its lineage',
+    body: 'A reconstructed exploratory session: every node is a recorded analyst interaction, every edge a causal dependency. Selecting a step highlights the provenance path that produced it.',
+    selectedStep: 'Selected step',
+    lineage: 'Lineage',
+    all: 'all steps',
+    steps: {
+      n0: 'Imported a 1.2M-event XES log; schema and timestamp checks passed before any analysis began.',
+      n1: 'Trimmed the long tail of one-off variants to keep the discovered model legible without hiding rework loops.',
+      n2: 'Isolated slow cases to test whether delays concentrate in one handover rather than across the flow.',
+      n3: 'Baseline discovery at noise threshold 0.4 — where fitness stays high without collapsing precision.',
+      n4: 'Cross-checked structure with a frequency-based miner to separate real concurrency from noise.',
+      n5: 'Clustered slow cases by activity profile; three cohorts emerged, one dominated by repeated approvals.',
+      n6: 'Token replay localised deviations to two activities rather than the whole path.',
+      n7: 'Fast vs. slow cohorts: the delta is a single queueing step, not distributed drag.',
+      n8: 'Annotated the review→approval handover as the causal bottleneck, with supporting filters attached.',
+      n9: 'Serialized the full provenance tree — every filter, parameter and branch — so a reviewer can replay it.',
     },
-    // Education Section
-    education: {
-      title: "Educación y Certificaciones",
-      inProgress: "En Progreso",
-      completed: "Completado",
-      certified: "Certificado",
-      degrees: {
-        masters: {
-          title: "Máster en Ingeniería Cloud, Datos y Gestión TI",
-          institution: "Escuela Internacional de Posgrado",
-          description: "Especialización en infraestructura cloud, gestión de datos y gestión de proyectos TI.",
-          keyAreas: "Áreas Clave",
-          areas: [
-            "Infraestructura Cloud",
-            "Dirección y Gestión de Empresas",
-            "Análisis de Información No Estructurada",
-            "Dirección de Proyectos",
-            "CRM y ERP",
-          ]
-        },
-        bachelors: {
-          title: "Grado en Ing. Informática - Ing. del Software",
-          institution: "Escuela Técnica Superior de Ingeniería Informática",
-          description: "Formación integral en ingeniería de software, fundamentos de informática y metodologías de desarrollo de software.",
-          coreSubjects: "Materias Principales",
-          subjects: [
-            "Análisis y Diseño de Algoritmos",
-            "Gestión de Proyectos Software",
-            "Arquitectura del Software",
-            "Calidad y Pruebas del Software"
-          ]
-        }
+    metricLabels: {
+      n0: ['events', 'cases'], n1: ['cases kept', 'variants'], n2: ['cases', 'median'], n3: ['fitness', 'precision'],
+      n4: ['fitness', 'precision'], n5: ['cohorts', 'silhouette'], n6: ['deviating', 'p95 replay'],
+      n7: ['delta', 'significance'], n8: ['bottleneck', 'evidence links'], n9: ['steps', 'branches'],
+    },
+    kinds: { load: 'INGEST', filter: 'FILTER', discover: 'DISCOVER', analyze: 'ANALYZE', annotate: 'ANNOTATE', export: 'EXPORT' },
+  },
+  experience: {
+    title: 'Experience',
+    sub: 'reverse chronological',
+    achievements: 'Key Achievements',
+    hybrid: 'Hybrid',
+    jobs: [
+      {
+        title: 'PhD Researcher & Teaching Assistant',
+        badge: 'Computer Science',
+        desc: 'Doctoral research on analytic provenance in exploratory process mining: capturing analyst interactions as replayable provenance trees. Teaching Assistant for Advanced Software and Systems Engineering.',
+        achievements: [],
       },
-      certifications: {
-        title: "Certificaciones Profesionales",
-        deutsch: {
-          name: "Stufe 1 Deutsch (A1)",
-          issuer: "Instituto de Idiomas",
-          description: "Certificación básica de alemán para contextos profesionales."
-        },
-        english: {
-          name: "Advanced English C1",
-          issuer: "Cambridge English Language Assessment",
-          description: "Competencia avanzada en inglés para contextos profesionales."
-        }
-      }
-    },
-    // Projects Section
-    projects: {
-      title: "Proyectos Destacados",
-      viewProject: "Ver proyecto",
-      viewSource: "Ver código fuente",
-      keyAchievements: "Logros Clave",
-      items: {
-        compliance: {
-          name: "Harmony LTD",
-          badge: "DevOps y Project Manager",
-          description: "Proyecto para la asignatura de Ingeniería del Software y Práctica Profesional de la Universidad de Sevilla. Desarrollado para dos organizaciones sin ánimo de lucro (Asociación Tertulia Cofrade Cirio y Costal y Asociación Ciudadana de Ayuda al Toxicómano). Lideré un equipo de 17 estudiantes.",
-          stats: {
-            team: "Equipo de 17 personas",
-            efficiency: "Liderazgo DevOps",
-            duration: "Año académico"
-          },
-          achievements: [
-            "Lideré un equipo multidisciplinario de 17 estudiantes",
-            "Gestioné procesos DevOps y pipelines de despliegue",
-            "Coordiné el desarrollo para dos organizaciones sin ánimo de lucro"
-          ]
-        },
-        erp: {
-          name: "STATUS (POC)",
-          badge: "Software Engineer",
-          description: "Prueba de concepto para el desarrollo de un sistema de gestión de conformidad de procesos de negocio de la Universidad de Sevilla. Trabajo como técnico especialista en un equipo de 4 personas.",
-          stats: {
-            users: "Procesos de negocio",
-            performance: "Gestión de conformidad",
-            duration: "Proyecto en curso"
-          },
-          achievements: [
-            "Desarrollé sistemas de medición de conformidad",
-            "Implementé contenedorización con Docker",
-            "Construí monitoreo en tiempo real con Grafana"
-          ]
-        },
-        devops: {
-          name: "Gestión Inteligente de Conformidad (TFG)",
-          badge: "Desarrollador Individual",
-          description: "Desarrollo individual de un chatbot de soporte para el modelado de flujos que miden la conformidad de procesos de negocio. Utilicé la API de OpenAI para el procesamiento del lenguaje natural.",
-          stats: {
-            environment: "Flujos Node-RED",
-            deployment: "Integración OpenAI",
-            duration: "Trabajo de fin de grado"
-          },
-          achievements: [
-            "Integré API de OpenAI para procesamiento de lenguaje natural",
-            "Desarrollé chatbot inteligente para modelado de procesos",
-            "Creé documentación integral"
-          ]
-        },
-        gateway: {
-          name: "CloudMedix",
-          badge: "Desarrollador y Project Manager",
-          description: "Plataforma de gestión de salud utilizando microservicios, IA y automatización. Desarrollé servicios de gestión de citas y turnos laborales con arquitectura moderna para escalabilidad y eficiencia en operaciones clínicas.",
-          stats: {
-            requests: "2 microservicios",
-            uptime: "Rust + Docker",
-            duration: "Proyecto académico"
-          },
-          achievements: [
-            "Desarrollé microservicio de gestión de citas",
-            "Construí sistema de gestión de turnos laborales",
-            "Implementé arquitectura de microservicios con API Gateway"
-          ]
-        }
-      }
-    },
-    // About Section
-    about: {
-      title: "Sobre Mí",
-      currentStatus: "Estado Actual",
-      status: {
-        focus: "Enfoque:",
-        focusValue: "Liderazgo Técnico",
-        mode: "Modo:",
-        modeValue: "Aprendiendo y Creciendo",
-        availability: "Disponibilidad:",
-        availabilityValue: "Abierto a Oportunidades"
+      {
+        title: 'Software Engineer · Team Leader',
+        badge: 'TRL 7',
+        desc: 'Compliance Management System, stage aimed at TRL 7: implementation in technology companies and validation of the tools with firms that carry out regulatory compliance audits (National Security Scheme, ISO 27001 and LOPDGDD). As Team Leader I tracked the project milestones and aligned technical goals with the project’s strategic objectives.',
+        achievements: [
+          'Enabled Real-Time Compliance Monitoring through System Mashups',
+          'Led Pilot Integration with Tech Sector Companies for Real-World Validation',
+          'Directed the Audit Validation Process with Compliance Experts',
+        ],
       },
-      sections: {
-        drive: {
-          title: "Motivación Personal",
-          content: "Mi camino en la ingeniería de software comenzó con curiosidad y evolucionó hacia una pasión por crear sistemas que resuelvan problemas del mundo real. Me motiva el reto de diseñar soluciones que no solo funcionen a la perfección, sino que también inspiren a los equipos a dar lo mejor de sí mismos."
-        },
-        leadership: {
-          title: "Objetivos Profesionales",
-          content: "Algunos de mis objetivos a largo plazo incluyen aumentar mi conocimiento y experiencia en el sector de la ingeniería de software. En el ámbito profesional, mi meta es crecer verticalmente dentro de la empresa, asumiendo mayores responsabilidades y aportando un valor añadido significativo."
-        },
-        vision: {
-          title: "Desarrollo Personal",
-          content: "Me esfuerzo por mejorar continuamente mis habilidades interpersonales, reconociendo la importancia de las soft skills en el liderazgo y la colaboración efectiva. Mis intereses actuales dentro del ámbito del software son la ingeniería cloud y la gestión de proyectos TI, además, me gusta aprender idiomas y trabajar en equipo."
-        }
+      {
+        title: 'Junior Software Engineer · Full-Stack',
+        badge: 'ISO · GDPR',
+        desc: 'Compliance Management System: development of a mashup-based system that lets users manage compliance with standards such as ISO, GDPR and software development methodologies. My role was Full-Stack Developer.',
+        achievements: [
+          'Developed compliance management platform',
+          'Led Integration of OpenAI-Powered Conversational Assistant',
+          'Built and Optimized a Cross-Platform CI/CD Pipeline',
+          'Established a Robust Testing Culture with High Coverage',
+        ],
       },
-      coreValues: "Valores Fundamentales",
-      values: {
-        precision: {
-          name: "Precisión",
-          description: "Alineando la implementación con los requisitos desde el primer momento"
-        },
-        innovation: {
-          name: "Innovación",
-          description: "Adoptando nuevas tecnologías y metodologías"
-        },
-        collaboration: {
-          name: "Colaboración",
-          description: "Construyendo equipos fuertes y efectivos"
-        },
-        growth: {
-          name: "Crecimiento",
-          description: "Aprendizaje y mejora continua"
-        }
-      }
+    ],
+  },
+  publications: {
+    title: 'Publications',
+    sub: 'titles kept in English',
+    notPublished: 'Not published yet',
+    items: [
+      { abstract: "Process mining relies on event data to analyze and improve business processes. The exploratory and non-linear nature of these analyses makes it difficult to understand, validate, compare, and communicate how findings are produced, limiting their business value. Existing provenance techniques focus on data lineage but lack support for systematic comparison of analyses, modular reuse of analysis steps, and comprehensive execution tracking. To address these limitations, we systematically derive a set of requirements and acceptance criteria based on established analytic provenance purposes. We further contribute a structured comparison of state-of-the-art provenance models, revealing critical gaps in comparative capabilities, reusability, and execution tracking. Based on these insights, we propose a conceptual provenance model tailored to exploratory process mining that supports branching analysis paths, comparison of analysis histories and states, reusability of analysis steps, and transparent representation of data evolution.", place: "St. John's, Canada" },
+    ],
+  },
+  projects: {
+    title: 'Projects & tooling',
+    sub: 'delivered systems and research tools',
+    viewProject: 'View project',
+    viewSource: 'View source code',
+    viewThesis: 'Read thesis (PDF)',
+    achievements: 'Key Achievements',
+    items: [
+      {
+        role: 'DEVOPS · PM',
+        desc: 'Information system project for Software Engineering and Professional Practice at Universidad de Sevilla, developed for two non-profit organizations (Asociación Tertulia Cofrade Cirio y Costal and Asociación Ciudadana de Ayuda al Toxicómano). Led a team of 17 students.',
+        stats: ['17-person team', 'DevOps leadership', 'Academic year'],
+        achievements: ['Led a multidisciplinary team of 17 students', 'Managed DevOps processes and deployment pipelines', 'Coordinated development for two non-profit organizations'],
+      },
+      {
+        role: 'SOFTWARE ENG.',
+        desc: 'Proof of concept for a business-process compliance management system at Universidad de Sevilla — the proof of concept behind the TRL 7 platform. Technical specialist in a team of 4.',
+        stats: ['Business processes', 'Compliance management', 'Ongoing project'],
+        achievements: ['Developed compliance measurement systems', 'Implemented Docker containerization', 'Built real-time monitoring with Grafana'],
+      },
+      {
+        role: 'THESIS',
+        desc: 'Bachelor thesis: individual development of a support chatbot for modeling flows that measure business-process compliance, using the OpenAI API for natural language processing.',
+        stats: ['Node-RED flows', 'OpenAI integration', "Bachelor's thesis"],
+        achievements: ['Integrated OpenAI API for natural language processing', 'Developed intelligent chatbot for process modeling', 'Created comprehensive documentation'],
+      },
+      {
+        role: 'MICROSERVICES · PM',
+        desc: 'Health management platform using microservices, AI and automation. Appointment and work-shift management services behind an API gateway, designed for scalability and efficiency in clinical operations.',
+        stats: ['2 microservices', 'Rust + Docker', 'Academic project'],
+        achievements: ['Developed appointment management microservice', 'Built work shift management system', 'Implemented microservices architecture with API Gateway'],
+      },
+    ],
+  },
+  education: {
+    title: 'Education',
+    sub: 'degrees & certifications',
+    certs: 'Certifications',
+    inProgress: 'In Progress',
+    completed: 'Completed',
+    certified: 'Certified',
+    items: [
+      { degree: 'PhD in Computer Science', focus: 'Analytic provenance · exploratory process mining · human-in-the-loop analysis' },
+      { degree: 'MSc Cloud Engineering, Data & IT Management', focus: 'Cloud infrastructure · unstructured information analysis · project management · CRM/ERP' },
+      { degree: 'BSc Computer Engineering — Software Engineering', focus: 'Algorithm design · software architecture · quality & testing · project management' },
+    ],
+  },
+  contact: {
+    title: "Let's talk provenance, pipelines, or teaching.",
+    body: 'Open to research collaborations, industry pilots on process data, and guest lectures. Based in St. Gallen, working in English and Spanish.',
+    values: ['Precision', 'Innovation', 'Collaboration', 'Growth'],
+  },
+  footer: { copy: '© 2026 Álvaro Bernal · St. Gallen, CH', version: 'EN / ES / DE · v3.0.0' },
+};
+
+type Content = typeof en;
+
+const es: Content = {
+  langName: 'Español',
+  nav: { work: 'Trabajo', artifact: 'Artefacto', experience: 'Experiencia', publications: 'Publicaciones', projects: 'Proyectos', education: 'Formación', about: 'Sobre mí' },
+  hero: {
+    badge: 'Doctorando · Universidad de St. Gallen',
+    role: 'Doctorando en Informática en la HSG, St. Gallen — investigación en process mining. Profesor asistente en Ingeniería Avanzada de Software y Sistemas.',
+    tagline: 'Uniendo la procedencia analítica con intervención humana y los motores de descubrimiento de procesos de alto rendimiento, tras tres años construyendo sistemas de compliance en producción.',
+    cv: 'CV / Currículum',
+    contact: 'Contacto',
+    photoAlt: 'Álvaro Bernal',
+  },
+  track: {
+    title: 'Triple vía',
+    sub: 'investigación · sistemas · docencia',
+    research: {
+      kicker: 'Línea de investigación',
+      title: 'Procedencia analítica en process mining exploratorio',
+      body: 'Capturo y modelo el cómo y el porqué de las decisiones del analista: interacciones con el log de eventos, elecciones de filtrado y abstracción, y las trayectorias ramificadas que llevan a un modelo descubierto. El resultado es un árbol de procedencia reutilizable que hace los hallazgos exploratorios reproducibles, auditables y enseñables.',
+      tags: ['árboles de procedencia', 'registro de interacciones', 'descubrimiento de procesos', 'HSG · St. Gallen'],
     },
-    // Footer Section
-    footer: {
-      description: "Construyendo el futuro a través de ingeniería reflexiva y liderazgo estratégico.",
-      navigation: "Navegación",
-      getInTouch: "Ponte en Contacto",
-      contactText: "Abierto a discutir oportunidades de liderazgo y desafíos técnicos.",
-      contactMe: "Contáctame",
-      copyright: "Todos los derechos reservados.",
-      lastUpdated: "Última actualización: Junio 2025",
-      version: "Versión 2.1.0",
-      backToTop: "Volver arriba"
+    systems: {
+      kicker: 'Ingeniería de sistemas',
+      title: 'Plataformas de compliance y pipelines de logs que llegan a producción',
+      body: 'Tres años de trabajo full-stack y cloud en un sistema de gestión del cumplimiento llevado a TRL 7: mashups de monitorización en tiempo real, CI/CD multiplataforma y equipos dirigidos hasta la entrega.',
+      metrics: { years: 'en el sistema de compliance', team: 'equipo más grande', trl: 'madurez del sistema', projects: 'proyectos destacados' },
     },
-    // Common
-    common: {
-      readMore: "Leer Más",
-      learnMore: "Aprender Más",
-      contactMe: "Contáctame"
-    }
-  }
-} as const;
+    teaching: {
+      kicker: 'Docencia',
+      chip: 'ASSE · Profesor asistente',
+      title: 'Ingeniería Avanzada de Software y Sistemas',
+      body: 'Tutorías, revisión de prácticas y crítica de código con estudiantes de máster: patrones de diseño, arquitectura software, sistemas distribuidos y disciplina de testing a nivel de producción.',
+      tags: ['patrones de diseño', 'arquitectura', 'sistemas distribuidos'],
+    },
+  },
+  artifact: {
+    title: 'Artefacto interactivo',
+    hint: 'haz clic en un paso para ver su linaje',
+    body: 'Una sesión exploratoria reconstruida: cada nodo es una interacción registrada del analista y cada arista una dependencia causal. Al seleccionar un paso se resalta la ruta de procedencia que lo produjo.',
+    selectedStep: 'Paso seleccionado',
+    lineage: 'Linaje',
+    all: 'todos',
+    steps: {
+      n0: 'Importó un log XES de 1,2 M de eventos; las comprobaciones de esquema y marcas de tiempo pasaron antes de cualquier análisis.',
+      n1: 'Recortó la cola larga de variantes únicas para mantener legible el modelo descubierto sin ocultar los bucles de retrabajo.',
+      n2: 'Aisló los casos lentos para comprobar si los retrasos se concentran en un traspaso y no en todo el flujo.',
+      n3: 'Descubrimiento base con umbral de ruido 0,4: la fitness se mantiene alta sin hundir la precisión.',
+      n4: 'Contrastó la estructura con un minero basado en frecuencias para separar la concurrencia real del ruido.',
+      n5: 'Agrupó los casos lentos por perfil de actividades; surgieron tres cohortes, una dominada por aprobaciones repetidas.',
+      n6: 'El token replay localizó las desviaciones en dos actividades en lugar de en toda la ruta.',
+      n7: 'Cohortes rápida vs. lenta: la diferencia es un único paso de cola, no un arrastre distribuido.',
+      n8: 'Anotó el traspaso revisión→aprobación como cuello de botella causal, con los filtros de apoyo adjuntos.',
+      n9: 'Serializó el árbol de procedencia completo (cada filtro, parámetro y rama) para que un revisor pueda reproducirlo.',
+    },
+    metricLabels: {
+      n0: ['eventos', 'casos'], n1: ['casos retenidos', 'variantes'], n2: ['casos', 'mediana'], n3: ['fitness', 'precisión'],
+      n4: ['fitness', 'precisión'], n5: ['cohortes', 'silueta'], n6: ['desviados', 'replay p95'],
+      n7: ['diferencia', 'significancia'], n8: ['cuello de botella', 'enlaces de evidencia'], n9: ['pasos', 'ramas'],
+    },
+    kinds: { load: 'INGESTA', filter: 'FILTRO', discover: 'DESCUBRIR', analyze: 'ANALIZAR', annotate: 'ANOTAR', export: 'EXPORTAR' },
+  },
+  experience: {
+    title: 'Experiencia',
+    sub: 'orden cronológico inverso',
+    achievements: 'Logros Clave',
+    hybrid: 'Híbrido',
+    jobs: [
+      {
+        title: 'Doctorando y Profesor Asistente',
+        badge: 'Informática',
+        desc: 'Investigación doctoral sobre procedencia analítica en process mining exploratorio: capturar las interacciones del analista como árboles de procedencia reproducibles. Profesor asistente de Ingeniería Avanzada de Software y Sistemas.',
+        achievements: [],
+      },
+      {
+        title: 'Ingeniero de Software · Líder de equipo',
+        badge: 'TRL 7',
+        desc: 'Compliance Management System, etapa orientada a alcanzar TRL 7: implementación en empresas del sector tecnológico y validación de las herramientas con empresas que realizan auditorías de cumplimiento normativo (Esquema Nacional de Seguridad, ISO 27001 y LOPDGDD). Como Team Leader realicé el seguimiento de los hitos y alineé los objetivos técnicos con los estratégicos del proyecto.',
+        achievements: [
+          'Monitorización de cumplimiento en tiempo real de una forma low-code',
+          'Implantación con empresas del sector tecnológico para conseguir una validación real',
+          'Validación de auditorías con expertos en cumplimiento normativo',
+        ],
+      },
+      {
+        title: 'Ingeniero de Software Junior · Full-Stack',
+        badge: 'ISO · RGPD',
+        desc: 'Compliance Management System: desarrollo de un sistema basado en mashups que permite gestionar el cumplimiento de normas como ISO, GDPR y metodologías de desarrollo de software. Mi rol fue Desarrollador Full-Stack.',
+        achievements: [
+          'Desarrollo de una plataforma de gestión de cumplimiento',
+          'Integración de un asistente potenciado por OpenAI',
+          'Construcción y optimización de un pipeline CI/CD multiplataforma',
+          'Cultura de testing robusta con alta cobertura',
+        ],
+      },
+    ],
+  },
+  publications: {
+    title: 'Publicaciones',
+    sub: 'títulos en inglés',
+    notPublished: 'Aún no publicado',
+    items: [
+      { abstract: "El process mining se basa en datos de eventos para analizar y mejorar los procesos de negocio. La naturaleza exploratoria y no lineal de estos análisis dificulta entender, validar, comparar y comunicar cómo se producen los hallazgos, lo que limita su valor para el negocio. Las técnicas de procedencia existentes se centran en el linaje de los datos, pero carecen de soporte para la comparación sistemática de análisis, la reutilización modular de los pasos de análisis y un seguimiento completo de la ejecución. Para abordar estas limitaciones, derivamos sistemáticamente un conjunto de requisitos y criterios de aceptación basados en los propósitos consolidados de la procedencia analítica. Además, aportamos una comparación estructurada de los modelos de procedencia del estado del arte, que revela carencias críticas en capacidades comparativas, reutilización y seguimiento de la ejecución. A partir de estas conclusiones, proponemos un modelo conceptual de procedencia adaptado al process mining exploratorio, que soporta rutas de análisis ramificadas, la comparación de historiales y estados de análisis, la reutilización de los pasos de análisis y una representación transparente de la evolución de los datos.", place: "St. John's, Canadá" },
+    ],
+  },
+  projects: {
+    title: 'Proyectos y herramientas',
+    sub: 'sistemas entregados y herramientas de investigación',
+    viewProject: 'Ver proyecto',
+    viewSource: 'Ver código fuente',
+    viewThesis: 'Leer TFG (PDF)',
+    achievements: 'Logros Clave',
+    items: [
+      {
+        role: 'DEVOPS · PM',
+        desc: 'Proyecto de sistema de información para Ingeniería del Software y Práctica Profesional de la Universidad de Sevilla, desarrollado para dos organizaciones sin ánimo de lucro (Asociación Tertulia Cofrade Cirio y Costal y Asociación Ciudadana de Ayuda al Toxicómano). Lideré un equipo de 17 estudiantes.',
+        stats: ['Equipo de 17 personas', 'Liderazgo DevOps', 'Año académico'],
+        achievements: ['Lideré un equipo multidisciplinario de 17 estudiantes', 'Gestioné procesos DevOps y pipelines de despliegue', 'Coordiné el desarrollo para dos organizaciones sin ánimo de lucro'],
+      },
+      {
+        role: 'SOFTWARE ENG.',
+        desc: 'Prueba de concepto de un sistema de gestión de conformidad de procesos de negocio en la Universidad de Sevilla: la prueba de concepto de la plataforma TRL 7. Técnico especialista en un equipo de 4 personas.',
+        stats: ['Procesos de negocio', 'Gestión de conformidad', 'Proyecto en curso'],
+        achievements: ['Desarrollé sistemas de medición de conformidad', 'Implementé contenedorización con Docker', 'Construí monitoreo en tiempo real con Grafana'],
+      },
+      {
+        role: 'TFG',
+        desc: 'Trabajo de fin de grado: desarrollo individual de un chatbot de soporte para el modelado de flujos que miden la conformidad de procesos de negocio, con la API de OpenAI para el procesamiento del lenguaje natural.',
+        stats: ['Flujos Node-RED', 'Integración OpenAI', 'Trabajo de fin de grado'],
+        achievements: ['Integré API de OpenAI para procesamiento de lenguaje natural', 'Desarrollé chatbot inteligente para modelado de procesos', 'Creé documentación integral'],
+      },
+      {
+        role: 'MICROSERVICIOS · PM',
+        desc: 'Plataforma de gestión de salud con microservicios, IA y automatización. Servicios de gestión de citas y turnos laborales tras un API gateway, pensados para la escalabilidad y eficiencia en operaciones clínicas.',
+        stats: ['2 microservicios', 'Rust + Docker', 'Proyecto académico'],
+        achievements: ['Desarrollé microservicio de gestión de citas', 'Construí sistema de gestión de turnos laborales', 'Implementé arquitectura de microservicios con API Gateway'],
+      },
+    ],
+  },
+  education: {
+    title: 'Formación',
+    sub: 'titulaciones y certificaciones',
+    certs: 'Certificaciones',
+    inProgress: 'En Progreso',
+    completed: 'Completado',
+    certified: 'Certificado',
+    items: [
+      { degree: 'Doctorado en Informática', focus: 'Procedencia analítica · process mining exploratorio · análisis con intervención humana' },
+      { degree: 'Máster en Ingeniería Cloud, Datos y Gestión TI', focus: 'Infraestructura cloud · análisis de información no estructurada · dirección de proyectos · CRM/ERP' },
+      { degree: 'Grado en Ing. Informática — Ing. del Software', focus: 'Diseño de algoritmos · arquitectura software · calidad y testing · gestión de proyectos' },
+    ],
+  },
+  contact: {
+    title: 'Hablemos de procedencia, pipelines o docencia.',
+    body: 'Abierto a colaboraciones de investigación, pilotos industriales con datos de procesos y clases invitadas. Basado en St. Gallen; trabajo en inglés y español.',
+    values: ['Precisión', 'Innovación', 'Colaboración', 'Crecimiento'],
+  },
+  footer: { copy: '© 2026 Álvaro Bernal · St. Gallen, CH', version: 'EN / ES / DE · v3.0.0' },
+};
+
+const de: Content = {
+  langName: 'Deutsch',
+  nav: { work: 'Arbeit', artifact: 'Artefakt', experience: 'Erfahrung', publications: 'Publikationen', projects: 'Projekte', education: 'Ausbildung', about: 'Über mich' },
+  hero: {
+    badge: 'Doktorand · Universität St. Gallen',
+    role: 'Doktorand der Informatik an der HSG, St. Gallen — Forschung zu Process Mining. Teaching Assistant für Advanced Software and Systems Engineering.',
+    tagline: 'Verbindet analytische Provenienz mit menschlicher Beteiligung und leistungsfähige Process-Discovery-Engines — nach drei Jahren Aufbau von Compliance-Systemen im Produktivbetrieb.',
+    cv: 'CV / Lebenslauf',
+    contact: 'Kontakt',
+    photoAlt: 'Álvaro Bernal',
+  },
+  track: {
+    title: 'Drei Spuren',
+    sub: 'Forschung · Systeme · Lehre',
+    research: {
+      kicker: 'Forschungsschwerpunkt',
+      title: 'Analytische Provenienz im explorativen Process Mining',
+      body: 'Ich erfasse und modelliere das Wie und Warum analytischer Entscheidungen: Interaktionen mit dem Event-Log, Filter- und Abstraktionsentscheidungen sowie die verzweigten Pfade, die zu einem entdeckten Modell führen. Ergebnis ist ein wiederverwendbarer Provenienzbaum, der explorative Befunde reproduzierbar, prüfbar und lehrbar macht.',
+      tags: ['Provenienzbäume', 'Interaktions-Logging', 'Process Discovery', 'HSG · St. Gallen'],
+    },
+    systems: {
+      kicker: 'Systems Engineering',
+      title: 'Compliance-Plattformen und Event-Log-Pipelines, die ausgeliefert werden',
+      body: 'Drei Jahre Full-Stack- und Cloud-Arbeit an einem Compliance-Management-System bis TRL 7: Echtzeit-Monitoring-Mashups, plattformübergreifende CI/CD und Teams bis zur Auslieferung geführt.',
+      metrics: { years: 'am Compliance-System', team: 'grösstes Team', trl: 'Systemreife', projects: 'ausgewählte Projekte' },
+    },
+    teaching: {
+      kicker: 'Lehre',
+      chip: 'ASSE · Teaching Assistant',
+      title: 'Advanced Software & Systems Engineering',
+      body: 'Tutorien, Laborreviews und Code-Kritik für Masterstudierende — Entwurfsmuster, Softwarearchitektur, verteilte Systeme und Testdisziplin auf Produktionsniveau.',
+      tags: ['Entwurfsmuster', 'Architektur', 'verteilte Systeme'],
+    },
+  },
+  artifact: {
+    title: 'Interaktives Artefakt',
+    hint: 'Schritt anklicken, um die Herkunft zu sehen',
+    body: 'Eine rekonstruierte explorative Sitzung: Jeder Knoten ist eine aufgezeichnete Analystenaktion, jede Kante eine kausale Abhängigkeit. Ein ausgewählter Schritt hebt den Provenienzpfad hervor, der zu ihm geführt hat.',
+    selectedStep: 'Ausgewählter Schritt',
+    lineage: 'Herkunft',
+    all: 'alle Schritte',
+    steps: {
+      n0: 'Ein XES-Log mit 1,2 Mio. Ereignissen importiert; Schema- und Zeitstempelprüfungen bestanden, bevor die Analyse begann.',
+      n1: 'Den langen Schwanz einmaliger Varianten gekappt, damit das entdeckte Modell lesbar bleibt, ohne Nacharbeitsschleifen zu verbergen.',
+      n2: 'Langsame Fälle isoliert, um zu prüfen, ob sich Verzögerungen in einer Übergabe konzentrieren statt im ganzen Ablauf.',
+      n3: 'Basis-Discovery bei Rauschschwelle 0,4 — Fitness bleibt hoch, ohne die Präzision einbrechen zu lassen.',
+      n4: 'Struktur mit einem frequenzbasierten Miner gegengeprüft, um echte Nebenläufigkeit von Rauschen zu trennen.',
+      n5: 'Langsame Fälle nach Aktivitätsprofil geclustert; drei Kohorten entstanden, eine geprägt von wiederholten Freigaben.',
+      n6: 'Token-Replay lokalisierte Abweichungen auf zwei Aktivitäten statt auf den ganzen Pfad.',
+      n7: 'Schnelle vs. langsame Kohorte: Der Unterschied ist ein einzelner Warteschritt, keine verteilte Bremse.',
+      n8: 'Die Übergabe Review→Freigabe als kausalen Engpass annotiert, mit den zugehörigen Filtern.',
+      n9: 'Den gesamten Provenienzbaum serialisiert — jeden Filter, Parameter und Zweig — damit ein Reviewer ihn wiederholen kann.',
+    },
+    metricLabels: {
+      n0: ['Ereignisse', 'Fälle'], n1: ['Fälle behalten', 'Varianten'], n2: ['Fälle', 'Median'], n3: ['Fitness', 'Präzision'],
+      n4: ['Fitness', 'Präzision'], n5: ['Kohorten', 'Silhouette'], n6: ['abweichend', 'p95 Replay'],
+      n7: ['Differenz', 'Signifikanz'], n8: ['Engpass', 'Belegverweise'], n9: ['Schritte', 'Zweige'],
+    },
+    kinds: { load: 'INGEST', filter: 'FILTER', discover: 'DISCOVER', analyze: 'ANALYSE', annotate: 'ANNOTIEREN', export: 'EXPORT' },
+  },
+  experience: {
+    title: 'Erfahrung',
+    sub: 'umgekehrt chronologisch',
+    achievements: 'Wichtigste Erfolge',
+    hybrid: 'Hybrid',
+    jobs: [
+      {
+        title: 'Doktorand & Teaching Assistant',
+        badge: 'Informatik',
+        desc: 'Doktorarbeit zur analytischen Provenienz im explorativen Process Mining: Analystenaktionen als wiederabspielbare Provenienzbäume erfassen. Teaching Assistant für Advanced Software and Systems Engineering.',
+        achievements: [],
+      },
+      {
+        title: 'Software Engineer · Teamleiter',
+        badge: 'TRL 7',
+        desc: 'Compliance-Management-System, Phase Richtung TRL 7: Einsatz in Technologieunternehmen und Validierung der Werkzeuge mit Firmen, die Compliance-Audits durchführen (Nationales Sicherheitsschema, ISO 27001 und LOPDGDD). Als Teamleiter habe ich die Meilensteine verfolgt und die technischen Ziele an den strategischen Projektzielen ausgerichtet.',
+        achievements: [
+          'Echtzeit-Compliance-Monitoring über System-Mashups ermöglicht',
+          'Pilotintegration mit Unternehmen der Techbranche zur Validierung unter realen Bedingungen geleitet',
+          'Audit-Validierung mit Compliance-Experten geleitet',
+        ],
+      },
+      {
+        title: 'Junior Software Engineer · Full-Stack',
+        badge: 'ISO · DSGVO',
+        desc: 'Compliance-Management-System: Entwicklung eines mashup-basierten Systems zur Verwaltung der Compliance mit Standards wie ISO, DSGVO und Entwicklungsmethodiken. Meine Rolle war Full-Stack-Entwickler.',
+        achievements: [
+          'Compliance-Management-Plattform entwickelt',
+          'Integration eines OpenAI-gestützten Konversationsassistenten geleitet',
+          'Plattformübergreifende CI/CD-Pipeline aufgebaut und optimiert',
+          'Robuste Testkultur mit hoher Abdeckung etabliert',
+        ],
+      },
+    ],
+  },
+  publications: {
+    title: 'Publikationen',
+    sub: 'Titel auf Englisch',
+    notPublished: 'Noch nicht veröffentlicht',
+    items: [
+      { abstract: "Process Mining stützt sich auf Ereignisdaten, um Geschäftsprozesse zu analysieren und zu verbessern. Die explorative und nicht-lineare Natur dieser Analysen erschwert es, nachzuvollziehen, zu validieren, zu vergleichen und zu kommunizieren, wie Erkenntnisse entstehen, und schmälert so ihren geschäftlichen Nutzen. Bestehende Provenienztechniken konzentrieren sich auf Datenherkunft, unterstützen aber weder den systematischen Vergleich von Analysen noch die modulare Wiederverwendung von Analyseschritten oder eine umfassende Ausführungsverfolgung. Um diese Einschränkungen zu adressieren, leiten wir systematisch Anforderungen und Akzeptanzkriterien aus etablierten Zwecken analytischer Provenienz ab. Zudem liefern wir einen strukturierten Vergleich aktueller Provenienzmodelle, der kritische Lücken bei Vergleichbarkeit, Wiederverwendbarkeit und Ausführungsverfolgung aufzeigt. Auf dieser Grundlage schlagen wir ein konzeptuelles Provenienzmodell für exploratives Process Mining vor, das verzweigte Analysepfade, den Vergleich von Analyseverläufen und -zuständen, die Wiederverwendbarkeit von Analyseschritten und eine transparente Darstellung der Datenentwicklung unterstützt.", place: "St. John's, Kanada" },
+    ],
+  },
+  projects: {
+    title: 'Projekte & Tools',
+    sub: 'ausgelieferte Systeme und Forschungswerkzeuge',
+    viewProject: 'Projekt ansehen',
+    viewSource: 'Quellcode ansehen',
+    viewThesis: 'Arbeit lesen (PDF)',
+    achievements: 'Wichtigste Erfolge',
+    items: [
+      {
+        role: 'DEVOPS · PM',
+        desc: 'Informationssystem für Software Engineering und Berufspraxis an der Universidad de Sevilla, entwickelt für zwei Non-Profit-Organisationen (Asociación Tertulia Cofrade Cirio y Costal und Asociación Ciudadana de Ayuda al Toxicómano). Leitung eines Teams von 17 Studierenden.',
+        stats: ['Team mit 17 Personen', 'DevOps-Leitung', 'Studienjahr'],
+        achievements: ['Interdisziplinäres Team von 17 Studierenden geleitet', 'DevOps-Prozesse und Deployment-Pipelines verantwortet', 'Entwicklung für zwei Non-Profit-Organisationen koordiniert'],
+      },
+      {
+        role: 'SOFTWARE ENG.',
+        desc: 'Proof of Concept für ein Compliance-Management-System für Geschäftsprozesse an der Universidad de Sevilla — der Proof of Concept hinter der TRL-7-Plattform. Technischer Spezialist in einem Viererteam.',
+        stats: ['Geschäftsprozesse', 'Compliance-Management', 'Laufendes Projekt'],
+        achievements: ['Systeme zur Messung der Compliance entwickelt', 'Docker-Containerisierung umgesetzt', 'Echtzeit-Monitoring mit Grafana aufgebaut'],
+      },
+      {
+        role: 'ABSCHLUSSARBEIT',
+        desc: 'Bachelorarbeit: Eigenständige Entwicklung eines Support-Chatbots zur Modellierung von Abläufen, die die Compliance von Geschäftsprozessen messen, mit der OpenAI-API für die Sprachverarbeitung.',
+        stats: ['Node-RED-Flows', 'OpenAI-Integration', 'Bachelorarbeit'],
+        achievements: ['OpenAI-API für Sprachverarbeitung integriert', 'Intelligenten Chatbot für Prozessmodellierung entwickelt', 'Umfassende Dokumentation erstellt'],
+      },
+      {
+        role: 'MICROSERVICES · PM',
+        desc: 'Gesundheitsplattform mit Microservices, KI und Automatisierung. Termin- und Schichtverwaltung hinter einem API-Gateway, ausgelegt auf Skalierbarkeit und Effizienz im klinischen Betrieb.',
+        stats: ['2 Microservices', 'Rust + Docker', 'Akademisches Projekt'],
+        achievements: ['Microservice für Terminverwaltung entwickelt', 'Schichtverwaltungssystem gebaut', 'Microservice-Architektur mit API-Gateway umgesetzt'],
+      },
+    ],
+  },
+  education: {
+    title: 'Ausbildung',
+    sub: 'Abschlüsse & Zertifikate',
+    certs: 'Zertifikate',
+    inProgress: 'In Arbeit',
+    completed: 'Abgeschlossen',
+    certified: 'Zertifiziert',
+    items: [
+      { degree: 'Doktorat in Informatik', focus: 'Analytische Provenienz · exploratives Process Mining · Human-in-the-Loop-Analyse' },
+      { degree: 'MSc Cloud Engineering, Daten & IT-Management', focus: 'Cloud-Infrastruktur · Analyse unstrukturierter Information · Projektmanagement · CRM/ERP' },
+      { degree: 'BSc Informatik — Software Engineering', focus: 'Algorithmenentwurf · Softwarearchitektur · Qualität & Testing · Projektmanagement' },
+    ],
+  },
+  contact: {
+    title: 'Sprechen wir über Provenienz, Pipelines oder Lehre.',
+    body: 'Offen für Forschungskooperationen, Industriepiloten mit Prozessdaten und Gastvorlesungen. Ansässig in St. Gallen; Arbeitssprachen Englisch und Spanisch.',
+    values: ['Präzision', 'Innovation', 'Zusammenarbeit', 'Wachstum'],
+  },
+  footer: { copy: '© 2026 Álvaro Bernal · St. Gallen, CH', version: 'EN / ES / DE · v3.0.0' },
+};
+
+export const translations = { en, es, de } as const;
 
 export type Language = keyof typeof translations;
-export type TranslationKey = keyof typeof translations.en;
+export const languages = Object.keys(translations) as Language[];

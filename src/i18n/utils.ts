@@ -1,4 +1,4 @@
-import { translations, type Language } from './translations';
+import { translations, languages, type Language } from './translations';
 
 export function getLangFromUrl(url: URL): Language {
   const [, lang] = url.pathname.split('/');
@@ -6,22 +6,12 @@ export function getLangFromUrl(url: URL): Language {
   return 'en';
 }
 
-export function useTranslations(lang: Language) {
-  return function t(key: string): string {
-    const keys = key.split('.');
-    let value: any = translations[lang];
-    
-    for (const k of keys) {
-      value = value?.[k];
-    }
-    
-    return value || key;
-  };
+export function useContent(lang: Language) {
+  return translations[lang];
 }
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } }
-  ];
+export function getLocalizedPath(lang: Language) {
+  return lang === 'en' ? '/' : `/${lang}/`;
 }
+
+export { languages };
