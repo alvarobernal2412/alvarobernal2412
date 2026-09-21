@@ -1,0 +1,63 @@
+---
+import { getLangFromUrl, useContent } from '../i18n/utils';
+import { publications } from '../data/portfolio';
+
+const lang = getLangFromUrl(Astro.url);
+const c = useContent(lang);
+---
+
+<section id="publications" class="section">
+  <div class="section-head">
+    <h2>{c.publications.title}</h2>
+    <span class="section-sub">{c.publications.sub}</span>
+  </div>
+
+  <div class="list">
+    {publications.map((p, i) => (
+      <div class="pub">
+        <span class="year">{p.year}</span>
+        <span class="text">
+          <span class="title">{p.title}</span>
+          <span class="authors">{p.authors}</span>
+          <span class="meta">{p.conference} · {c.publications.items[i].place}</span>
+          <span class="status"><span class="status-badge progress">{c.publications.notPublished}</span></span>
+          <span class="takeaway">{c.publications.items[i].abstract}</span>
+        </span>
+        <span class="venue">{p.venue}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .pub {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) auto;
+    gap: 20px;
+    align-items: start;
+    padding: 22px 12px;
+    border-top: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .pub:hover { background: var(--surface); }
+
+  .year { font-family: var(--mono); font-size: 12.5px; color: var(--text-muted); padding-top: 3px; }
+  .text { min-width: 0; }
+  .title { display: block; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; text-wrap: pretty; }
+  .meta { display: block; font-family: var(--mono); font-size: 12px; color: var(--accent); margin-top: 8px; }
+  .status { display: block; margin-top: 10px; }
+  .authors { display: block; font-size: 13.5px; color: var(--text-strong); margin-top: 6px; }
+  .takeaway { display: block; color: var(--text-secondary); font-size: 14px; line-height: 1.55; margin-top: 7px; text-wrap: pretty; }
+
+  .venue {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-strong); border: 1px solid var(--border); background: var(--surface);
+    padding: 6px 10px; border-radius: 6px; white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .pub { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+    .venue { justify-self: start; }
+  }
+</style>
