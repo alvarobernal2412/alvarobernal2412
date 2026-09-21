@@ -1,13 +1,14 @@
 ---
 export interface Props {
   title: string;
+  lang?: string;
 }
 
-const { title } = Astro.props;
+const { title, lang = 'en' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,281 +16,184 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
-    <div class="scroll-indicator"></div>
-    <slot />
+    <div class="page">
+      <slot />
+    </div>
   </body>
 </html>
 
 <style is:global>
   :root {
-    --primary: #1e40af;
-    --primary-light: #3b82f6;
-    --primary-dark: #1e3a8a;
-    --secondary: #64748b;
-    --accent: #0ea5e9;
+    --accent: #1e40af;
+    --accent-2: #0ea5e9;
     --background: #f8fafc;
     --surface: #ffffff;
     --surface-alt: #f1f5f9;
     --text-primary: #0f172a;
+    --text-strong: #334155;
     --text-secondary: #475569;
     --text-muted: #64748b;
+    --text-faint: #94a3b8;
     --border: #e2e8f0;
-    --border-light: #f1f5f9;
+    --border-strong: #cbd5e1;
     --success: #10b981;
     --warning: #f59e0b;
-    --error: #ef4444;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--background);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: var(--background);
     color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
   }
 
-  .scroll-indicator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    z-index: 1000;
-    transition: width 0.3s ease;
-  }
+  ::selection { background: rgba(14, 165, 233, 0.22); }
 
-  .section {
-    padding: 5rem 0;
-    position: relative;
-  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
 
-  .section:nth-child(even) {
-    background-color: var(--surface-alt);
-  }
-
-  .container {
-    max-width: 1200px;
+  .page {
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    min-height: 100vh;
+    padding: 0 clamp(20px, 5vw, 72px) 72px;
   }
 
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    position: relative;
-    color: var(--text-primary);
-    text-align: center;
+  .section { padding-top: clamp(56px, 8vw, 88px); }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
   }
 
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4rem;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    border-radius: 2px;
+  .section-head h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    letter-spacing: -0.025em;
+    font-weight: 600;
   }
 
-  .subsection-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    position: relative;
-    color: var(--text-primary);
-    text-align: center;
+  .section-sub {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
   }
 
-  .card {
-    background: var(--surface);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .panel {
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    border-radius: 14px;
+    background: var(--surface);
+    transition: border-color 0.2s;
   }
 
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+  .panel:hover { border-color: var(--text-faint); }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 5px;
+    background: transparent;
   }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+
+  .role-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-strong);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--success);
+  }
+
+  .status-badge.progress { background: var(--warning); }
 
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    gap: 8px;
     font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 0.875rem;
+    font-size: 14px;
+    padding: 11px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-primary);
+    transition: border-color 0.2s, filter 0.2s;
   }
+
+  .btn:hover { border-color: var(--accent); color: var(--text-primary); }
 
   .btn-primary {
-    background: var(--primary);
-    color: white;
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
   }
 
-  .btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-1px);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
-  }
-
-  .btn-outline:hover {
-    background: var(--primary);
-    color: white;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .badge-primary {
-    background: var(--primary-light);
-    color: white;
-  }
-
-  .badge-secondary {
-    background: var(--surface-alt);
-    color: var(--text-secondary);
-  }
-
-  .badge-success {
-    background: var(--success);
-    color: white;
-  }
-
-  .badge-progress {
-    background: var(--warning);
-    color: white;
-  }
-
-  /* Responsive breakpoints */
-  @media (max-width: 1024px) {
-    .container {
-      padding: 0 1rem;
-    }
-    
-    .section {
-      padding: 4rem 0;
-    }
-    
-    .section-title {
-      font-size: 2rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .section {
-      padding: 3rem 0;
-    }
-    
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 2rem;
-    }
-    
-    .card {
-      padding: 1.5rem;
-    }
-  }
+  .btn-primary:hover { filter: brightness(1.08); color: #fff; border-color: var(--accent); }
 
   @media (max-width: 640px) {
-    .container {
-      padding: 0 0.75rem;
-    }
-    
-    .section {
-      padding: 2.5rem 0;
-    }
-    
-    .section-title {
-      font-size: 1.5rem;
-    }
-    
-    .card {
-      padding: 1rem;
-    }
+    .btn { padding: 10px 14px; font-size: 13.5px; }
   }
 </style>
 
 <script>
-  // Scroll indicator
-  function updateScrollIndicator() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    const indicator = document.querySelector('.scroll-indicator') as HTMLElement;
-    if (indicator) {
-      indicator.style.width = scrollPercent + '%';
+  // Highlight the nav link of the section currently in view
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav-link'));
+  const sections = links
+    .map((l) => document.querySelector(l.getAttribute('href') ?? ''))
+    .filter((s): s is Element => !!s);
+
+  const update = () => {
+    let current = '';
+    for (const s of sections) {
+      if (window.scrollY + 140 >= (s as HTMLElement).offsetTop) current = s.id;
     }
-  }
+    links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === `#${current}`));
+  };
 
-  window.addEventListener('scroll', updateScrollIndicator);
-
-  // Navigation highlighting
-  function highlightCurrentSection() {
-    const sections = document.querySelectorAll('.section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-      const htmlSection = section as HTMLElement;
-      const sectionTop = htmlSection.offsetTop - 150;
-      const sectionHeight = htmlSection.clientHeight;
-      
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSection = htmlSection.getAttribute('id')!;
-      }
-    });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
-      }
-    });
-  }
-  
-  window.addEventListener('scroll', highlightCurrentSection);
-  window.addEventListener('load', highlightCurrentSection);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 </script>
