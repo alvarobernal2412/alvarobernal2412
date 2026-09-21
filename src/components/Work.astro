@@ -1,0 +1,113 @@
+---
+import { getLangFromUrl, useContent } from '../i18n/utils';
+import { projects } from '../data/portfolio';
+
+const lang = getLangFromUrl(Astro.url);
+const { track } = useContent(lang);
+
+const metrics = [
+  ['3 yrs', track.systems.metrics.years, ''],
+  ['17', track.systems.metrics.team, 'accent'],
+  ['TRL 7', track.systems.metrics.trl, 'accent-2'],
+  [String(projects.length), track.systems.metrics.projects, ''],
+];
+---
+
+<section id="work" class="section">
+  <div class="section-head">
+    <h2>{track.title}</h2>
+    <span class="section-sub">{track.sub}</span>
+  </div>
+
+  <div class="grid">
+    <article class="panel research">
+      <div class="kicker">01 / {track.research.kicker}</div>
+      <h3>{track.research.title}</h3>
+      <p class="body">{track.research.body}</p>
+      <div class="tag-row push">{track.research.tags.map((t) => <span class="tag">{t}</span>)}</div>
+    </article>
+
+    <article class="panel systems">
+      <div class="pad">
+        <div class="kicker kicker-2">02 / {track.systems.kicker}</div>
+        <h3 class="small">{track.systems.title}</h3>
+        <p class="body small-body">{track.systems.body}</p>
+      </div>
+      <div class="metrics">
+        {metrics.map(([value, label, tone]) => (
+          <div>
+            <div class:list={['metric-value', tone]}>{value}</div>
+            <div class="metric-label">{label}</div>
+          </div>
+        ))}
+      </div>
+    </article>
+
+    <article class="panel teaching">
+      <div class="kicker muted">03 / {track.teaching.kicker}</div>
+      <div class="chip">{track.teaching.chip}</div>
+      <h3 class="small">{track.teaching.title}</h3>
+      <p class="body small-body">{track.teaching.body}</p>
+      <div class="tag-row push">{track.teaching.tags.map((t) => <span class="tag">{t}</span>)}</div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .research { grid-column: span 2; padding: clamp(22px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px; }
+  .teaching { padding: clamp(22px, 3vw, 28px); display: flex; flex-direction: column; gap: 14px; }
+  .systems { overflow: hidden; display: flex; flex-direction: column; }
+  .pad { padding: clamp(22px, 3vw, 28px) clamp(22px, 3vw, 28px) 14px; }
+
+  h3 { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 600; text-wrap: pretty; }
+  h3.small { font-size: 21px; line-height: 1.2; letter-spacing: -0.015em; }
+  .systems h3 { margin: 14px 0 10px; }
+
+  .body { color: var(--text-secondary); font-size: 15px; line-height: 1.65; max-width: 62ch; text-wrap: pretty; }
+  .small-body { font-size: 14.5px; line-height: 1.6; }
+
+  .push { margin-top: auto; padding-top: 8px; }
+  .kicker-2 { color: var(--accent-2); }
+  .kicker.muted { color: var(--text-secondary); }
+
+  .chip {
+    align-self: flex-start;
+    border: 1px dashed var(--border-strong);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-strong);
+  }
+
+  .metrics {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    font-family: var(--mono);
+  }
+
+  .metric-value { font-size: 20px; color: var(--text-primary); }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.accent-2 { color: var(--accent-2); }
+  .metric-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  @media (min-width: 1000px) {
+    .grid { grid-template-columns: 2fr 1fr 1fr; }
+    .research { grid-column: auto; }
+  }
+
+  @media (max-width: 640px) {
+    .research { grid-column: span 1; }
+  }
+</style>
