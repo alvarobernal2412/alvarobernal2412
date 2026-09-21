@@ -1,0 +1,61 @@
+---
+import { Linkedin, Github, Mail } from 'lucide-astro';
+import { getLangFromUrl, useContent } from '../i18n/utils';
+import { links } from '../data/portfolio';
+
+const lang = getLangFromUrl(Astro.url);
+const c = useContent(lang);
+---
+
+<section id="contact" class="contact">
+  <div>
+    <h2>{c.contact.title}</h2>
+    <p>{c.contact.body}</p>
+    <div class="tag-row values">{c.contact.values.map((v) => <span class="tag">{v}</span>)}</div>
+  </div>
+  <div class="cta">
+    <a href={`mailto:${links.email}`} class="mono primary"><Mail size={16} />{links.email}</a>
+    <a href={links.linkedin} class="mono" target="_blank" rel="noopener"><Linkedin size={16} />LinkedIn</a>
+    <a href={links.github} class="mono" target="_blank" rel="noopener"><Github size={16} />GitHub</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>{c.footer.copy}</span>
+  <span>{c.footer.version}</span>
+</footer>
+
+<style>
+  .contact {
+    margin-top: clamp(64px, 9vw, 104px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(140deg, #ffffff, #f1f5f9);
+    padding: clamp(30px, 5vw, 56px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    align-items: center;
+  }
+
+  h2 { font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.025em; font-weight: 600; text-wrap: pretty; }
+  p { margin-top: 14px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; max-width: 50ch; text-wrap: pretty; }
+  .values { margin-top: 20px; }
+
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .mono {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 13.5px;
+    border: 1px solid var(--border); padding: 12px 18px; border-radius: 8px; color: var(--text-primary);
+    background: var(--surface);
+  }
+  .mono:hover { border-color: var(--accent); color: var(--text-primary); }
+  .mono.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .mono.primary:hover { filter: brightness(1.08); color: #fff; }
+
+  .footer {
+    margin-top: 36px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-family: var(--mono); font-size: 11.5px; color: var(--text-faint);
+  }
+</style>
