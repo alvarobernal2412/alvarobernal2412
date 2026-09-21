@@ -1,0 +1,331 @@
+---
+import { getLangFromUrl, useContent } from '../i18n/utils';
+import { nodes, edges } from '../data/portfolio';
+
+const lang = getLangFromUrl(Astro.url);
+const { artifact: a } = useContent(lang);
+
+const data = {
+  nodes: nodes.map((n) => ({
+    ...n,
+    kindLabel: a.kinds[n.kind],
+    why: a.steps[n.id as keyof typeof a.steps],
+    metricLabels: a.metricLabels[n.id as keyof typeof a.metricLabels],
+  })),
+  edges,
+  filters: [
+    ['all', a.all],
+    ['filter', a.kinds.filter.toLowerCase()],
+    ['discover', a.kinds.discover.toLowerCase()],
+    ['analyze', a.kinds.analyze.toLowerCase()],
+  ],
+};
+---
+
+<section id="artifact" class="section">
+  <div class="section-head tight">
+    <h2>{a.title}</h2>
+    <span class="section-sub">{a.hint}</span>
+  </div>
+  <p class="intro">{a.body}</p>
+
+  <div class="panel-static" id="artifact-root">
+    <div class="toolbar">
+      <div class="filters" id="artifact-filters"></div>
+      <div class="count" id="artifact-count"></div>
+    </div>
+
+    <div class="body">
+      <div class="graph-wrap">
+        <div class="graph" id="artifact-graph">
+          <svg viewBox="0 0 760 330" id="artifact-edges"></svg>
+        </div>
+      </div>
+
+      <div class="miller" id="artifact-miller"></div>
+
+      <aside class="detail">
+        <div class="label">{a.selectedStep}</div>
+        <div class="step-title" id="sel-title"></div>
+        <div class="step-kind" id="sel-kind"></div>
+        <p class="step-why" id="sel-why"></p>
+        <div class="lineage">
+          <div class="label">{a.lineage}</div>
+          <div id="sel-lineage"></div>
+        </div>
+        <div class="sel-metrics">
+          <div><div class="mv" id="sel-a"></div><div class="ml" id="sel-al"></div></div>
+          <div><div class="mv b" id="sel-b"></div><div class="ml" id="sel-bl"></div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script type="application/json" id="artifact-data" set:html={JSON.stringify(data)} />
+</section>
+
+<script>
+  type Node = {
+    id: string; x: number; y: number; w: number; kind: string; label: string; t: string;
+    a: string; b: string; kindLabel: string; why: string; metricLabels: [string, string];
+  };
+  const raw = document.getElementById('artifact-data')?.textContent;
+  if (raw) {
+    const data = JSON.parse(raw) as { nodes: Node[]; edges: [string, string][]; filters: [string, string][] };
+    const $ = (id: string) => document.getElementById(id)!;
+    const byId = Object.fromEntries(data.nodes.map((n) => [n.id, n]));
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#1e40af';
+    const NS = 'http://www.w3.org/2000/svg';
+
+    let selected = 'n7';
+    let filter = 'all';
+
+    const parents: Record<string, string[]> = {};
+    data.edges.forEach(([a, b]) => (parents[b] ||= []).push(a));
+    const pathTo = (id: string) => {
+      const chain: string[] = [];
+      let cur = id, guard = 0;
+      while (parents[cur] && guard++ < 12) { cur = parents[cur][0]; chain.unshift(cur); }
+      return [...chain, id];
+    };
+
+    const matches = (n: Node) => filter === 'all' || n.kind === filter || n.id === selected;
+
+    // static structure: nodes are created once and restyled on each render
+    const graph = $('artifact-graph');
+    const svg = $('artifact-edges');
+    const pathEls = data.edges.map(() => {
+      const p = document.createElementNS(NS, 'path');
+      p.setAttribute('fill', 'none');
+      svg.appendChild(p);
+      return p;
+    });
+
+    const nodeEls = data.nodes.map((n) => {
+      const el = document.createElement('button');
+      el.type = 'button';
+      el.className = 'node';
+      el.style.left = n.x + 'px';
+      el.style.top = n.y - 3 + 'px';
+      el.style.width = n.w + 'px';
+      el.innerHTML = `<span class="nk"></span><span class="nl"></span>`;
+      (el.querySelector('.nk') as HTMLElement).textContent = n.kindLabel;
+      (el.querySelector('.nl') as HTMLElement).textContent = n.label;
+      el.addEventListener('click', () => { selected = n.id; render(); });
+      graph.appendChild(el);
+      return el;
+    });
+
+    // mobile: Miller columns. Each column lists the children of the step selected in the previous one.
+    const kids: Record<string, string[]> = {};
+    data.nodes.forEach((n) => {
+      const p = parents[n.id]?.[0];
+      if (p) (kids[p] ||= []).push(n.id);
+    });
+    const rootId = data.nodes.find((n) => !parents[n.id])!.id;
+    const miller = $('artifact-miller');
+
+    function renderMiller(scroll: boolean) {
+      const path = pathTo(selected);
+      const lists: string[][] = [[rootId]];
+      path.forEach((id) => { if (kids[id]) lists.push(kids[id]); });
+
+      const cols = lists.map((ids) => {
+        const col = document.createElement('div');
+        col.className = 'mcol';
+        ids.forEach((id) => {
+          const n = byId[id];
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'mitem';
+          b.style.opacity = matches(n) ? '1' : '0.32';
+          b.classList.toggle('sel', id === selected);
+          b.classList.toggle('on-path', path.includes(id) && id !== selected);
+          const text = document.createElement('span');
+          text.className = 'mtext';
+          const k = document.createElement('span');
+          k.className = 'nk';
+          k.textContent = n.kindLabel;
+          const l = document.createElement('span');
+          l.className = 'nl';
+          l.textContent = n.label;
+          text.append(k, l);
+          b.append(text);
+          if (kids[id]) {
+            const chev = document.createElement('span');
+            chev.className = 'chev';
+            chev.textContent = '›';
+            b.append(chev);
+          }
+          b.addEventListener('click', () => { selected = id; render(true); });
+          col.appendChild(b);
+        });
+        return col;
+      });
+
+      miller.replaceChildren(...cols);
+      if (scroll) {
+        // left-align the column holding the selected step, so its children column peeks in on the right
+        const own = cols[path.length - 1];
+        miller.scrollTo({ left: own.offsetLeft - 12, behavior: 'smooth' });
+      }
+    }
+
+    const filtersEl = $('artifact-filters');
+    const filterEls = data.filters.map(([key, label]) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'filter';
+      b.textContent = label;
+      b.addEventListener('click', () => { filter = key; render(); });
+      filtersEl.appendChild(b);
+      return { key, el: b };
+    });
+
+    function render(scroll = false) {
+      const sel = byId[selected];
+      const path = pathTo(selected);
+
+      data.nodes.forEach((n, i) => {
+        const el = nodeEls[i];
+        const isSel = n.id === selected;
+        const onPath = path.includes(n.id);
+        el.style.opacity = matches(n) ? '1' : '0.24';
+        el.classList.toggle('sel', isSel);
+        el.classList.toggle('on-path', onPath && !isSel);
+      });
+
+      data.edges.forEach(([a, b], i) => {
+        const s = byId[a], d = byId[b];
+        const x1 = s.x + s.w, y1 = s.y + 17, x2 = d.x, y2 = d.y + 17, mx = (x1 + x2) / 2;
+        const on = path.includes(a) && path.includes(b);
+        const p = pathEls[i];
+        p.setAttribute('d', `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`);
+        p.setAttribute('stroke', on ? accent : '#cbd5e1');
+        p.setAttribute('stroke-width', on ? '1.8' : '1.2');
+        p.setAttribute('stroke-dasharray', on ? '0' : '4 4');
+        p.setAttribute('opacity', on ? '0.95' : '0.7');
+      });
+
+      renderMiller(scroll);
+
+      filterEls.forEach(({ key, el }) => el.classList.toggle('on', key === filter));
+      $('artifact-count').textContent = `session 0x3f2a · ${data.nodes.filter(matches).length} / ${data.nodes.length}`;
+
+      $('sel-title').textContent = sel.label;
+      $('sel-kind').textContent = `${sel.kindLabel} · t+${sel.t}`;
+      $('sel-why').textContent = sel.why;
+      $('sel-a').textContent = sel.a;
+      $('sel-al').textContent = sel.metricLabels[0];
+      $('sel-b').textContent = sel.b;
+      $('sel-bl').textContent = sel.metricLabels[1];
+
+      const lin = $('sel-lineage');
+      lin.replaceChildren(
+        ...path.map((id, i) => {
+          const row = document.createElement('div');
+          row.className = 'lin-row';
+          const m = document.createElement('span');
+          m.textContent = i === path.length - 1 ? '●' : '│';
+          const t = document.createElement('span');
+          t.textContent = `${byId[id].t}  ${byId[id].label}`;
+          row.append(m, t);
+          return row;
+        })
+      );
+    }
+
+    render();
+    miller.scrollLeft = (miller.querySelectorAll('.mcol')[pathTo(selected).length - 1] as HTMLElement).offsetLeft - 12;
+  }
+</script>
+
+<style is:global>
+  #artifact .tight { margin-bottom: 10px; }
+  #artifact .intro { margin: 0 0 22px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; max-width: 70ch; text-wrap: pretty; }
+
+  #artifact .panel-static { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); overflow: hidden; }
+
+  #artifact .toolbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--surface-alt);
+  }
+
+  #artifact .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  #artifact .filter {
+    cursor: pointer; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 6px; padding: 6px 11px; background: #fff; color: var(--text-secondary); border: 1px solid var(--border);
+  }
+  #artifact .filter.on { background: rgba(30, 64, 175, 0.1); color: var(--accent); border-color: var(--accent); }
+
+  #artifact .count { font-family: var(--mono); font-size: 11.5px; color: var(--text-muted); }
+
+  #artifact .body { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+  #artifact .graph-wrap { padding: 18px 12px; overflow-x: auto; border-right: 1px solid var(--border); min-width: 0; }
+
+  #artifact .graph { position: relative; width: 760px; height: 330px; font-family: var(--mono); }
+  #artifact .graph svg { position: absolute; inset: 0; width: 760px; height: 330px; display: block; }
+
+  #artifact .node {
+    position: absolute; height: 40px; cursor: pointer; text-align: left; font: inherit;
+    border-radius: 7px; border: 1px solid var(--border); border-left: 4px solid var(--border); background: #fff;
+    padding: 5px 10px; display: flex; flex-direction: column; justify-content: center; gap: 2px; overflow: hidden;
+  }
+  #artifact .node.on-path { background: #eff6ff; border-color: #93c5fd; border-left-color: #93c5fd; }
+  #artifact .node.sel { background: #dbeafe; border-color: var(--accent); border-left-color: var(--accent); }
+  #artifact .nk { font-size: 8.5px; letter-spacing: 1.2px; color: var(--text-muted); }
+  #artifact .node.sel .nk { color: var(--accent); }
+  #artifact .nl { font-size: 11px; color: var(--text-strong); white-space: nowrap; }
+  #artifact .node.sel .nl { color: var(--text-primary); }
+
+  #artifact .detail { padding: 20px; display: flex; flex-direction: column; gap: 13px; min-width: 0; }
+  #artifact .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+  #artifact .step-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
+  #artifact .step-kind { font-family: var(--mono); font-size: 11.5px; color: var(--accent); }
+  #artifact .step-why { color: var(--text-secondary); font-size: 14px; line-height: 1.6; text-wrap: pretty; }
+  #artifact .lineage { border-top: 1px solid var(--border); padding-top: 14px; display: grid; gap: 9px; }
+  #artifact .lin-row { display: flex; gap: 10px; align-items: baseline; font-family: var(--mono); font-size: 12px; color: var(--text-strong); }
+  #artifact .lin-row span:first-child { color: var(--accent); }
+  #artifact .sel-metrics {
+    margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-family: var(--mono);
+  }
+  /* mobile Miller columns (hidden on desktop) */
+  #artifact .miller { display: none; }
+
+  @media (max-width: 700px) {
+    #artifact .graph-wrap { display: none; }
+    #artifact .toolbar { padding: 12px 14px; }
+
+    #artifact .miller {
+      display: flex; overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid var(--border); background: var(--surface-alt);
+    }
+
+    #artifact .mcol {
+      flex: 0 0 72%; max-width: 280px; scroll-snap-align: start; display: flex; flex-direction: column;
+      gap: 8px; padding: 12px; border-right: 1px solid var(--border);
+    }
+
+    #artifact .mitem {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; cursor: pointer;
+      font-family: var(--mono); border-radius: 7px; border: 1px solid var(--border); border-left: 4px solid var(--border);
+      background: #fff; padding: 9px 10px; min-height: 48px;
+    }
+    #artifact .mtext { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    #artifact .mitem .nl { white-space: normal; font-size: 12.5px; }
+    #artifact .chev { color: var(--text-faint); font-size: 18px; line-height: 1; flex: none; }
+    #artifact .mitem.on-path { background: #eff6ff; border-color: #93c5fd; border-left-color: #93c5fd; }
+    #artifact .mitem.on-path .chev { color: #93c5fd; }
+    #artifact .mitem.sel { background: #dbeafe; border-color: var(--accent); border-left-color: var(--accent); }
+    #artifact .mitem.sel .nk { color: var(--accent); }
+    #artifact .mitem.sel .nl { color: var(--text-primary); }
+    #artifact .mitem.sel .chev { color: var(--accent); }
+  }
+
+  #artifact .mv { font-size: 17px; color: var(--text-primary); }
+  #artifact .mv.b { color: var(--accent-2); }
+  #artifact .ml { font-size: 10.5px; color: var(--text-muted); margin-top: 2px; }
+</style>
