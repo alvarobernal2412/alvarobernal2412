@@ -1,310 +1,65 @@
 ---
-import { Calendar, Award, ExternalLink, CheckCircle } from 'lucide-astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { Award, CheckCircle } from 'lucide-astro';
+import { getLangFromUrl, useContent } from '../i18n/utils';
+import { education, certifications } from '../data/portfolio';
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const c = useContent(lang);
 ---
 
 <section id="education" class="section">
-  <div class="container">
-    <h2 class="section-title">{t('education.title')}</h2>
-    <div class="education-grid">
-      
-      <div class="education-item card">
-        <div class="education-header">
-          <div class="education-icon">
-            <Award size={24} />
-          </div>
-          <div class="education-status">
-            <span class="badge badge-success">{t('education.completed')}</span>
-          </div>
+  <div class="section-head">
+    <h2>{c.education.title}</h2>
+    <span class="section-sub">{c.education.sub}</span>
+  </div>
+
+  <div class="grid">
+    {education.map((e, i) => (
+      <div class="panel card">
+        <div class="top">
+          <span class="period">{e.period[lang]}</span>
+          <span class:list={['status-badge', { progress: e.status === 'inProgress' }]}>
+            {c.education[e.status]}
+          </span>
         </div>
-        <div class="education-content">
-          <h3 class="education-title">{t('education.degrees.masters.title')}</h3>
-          <p class="education-institution">{t('education.degrees.masters.institution')}</p>
-          <div class="education-meta">
-            <span class="meta-item">
-              <Calendar size={14} />
-              2024 - 2025
-            </span>
-          </div>
-          <p class="education-description">
-            {t('education.degrees.masters.description')}
-          </p>
-          <div class="education-highlights">
-            <h4 class="highlights-title">{t('education.degrees.masters.keyAreas')}</h4>
-            <ul class="highlights-list">
-              <li>{t('education.degrees.masters.areas.0')}</li>
-              <li>{t('education.degrees.masters.areas.1')}</li>
-              <li>{t('education.degrees.masters.areas.2')}</li>
-              <li>{t('education.degrees.masters.areas.3')}</li>
-            </ul>
-          </div>
-        </div>
+        <div class="icon"><Award size={22} /></div>
+        <h3>{c.education.items[i].degree}</h3>
+        <span class="school">{e.school}</span>
+        <span class="focus">{c.education.items[i].focus}</span>
       </div>
+    ))}
+  </div>
 
-      <div class="education-item card">
-        <div class="education-header">
-          <div class="education-icon">
-            <Award size={24} />
-          </div>
-          <div class="education-status">
-            <span class="badge badge-success">{t('education.completed')}</span>
-          </div>
-        </div>
-        <div class="education-content">
-          <h3 class="education-title">{t('education.degrees.bachelors.title')}</h3>
-          <p class="education-institution">{t('education.degrees.bachelors.institution')}</p>
-          <div class="education-meta">
-            <span class="meta-item">
-              <Calendar size={14} />
-              2018 - 2024
-            </span>
-          </div>
-          <p class="education-description">
-            {t('education.degrees.bachelors.description')}
-          </p>
-          <div class="education-highlights">
-            <h4 class="highlights-title">{t('education.degrees.bachelors.coreSubjects')}</h4>
-            <ul class="highlights-list">
-              <li>{t('education.degrees.bachelors.subjects.0')}</li>
-              <li>{t('education.degrees.bachelors.subjects.1')}</li>
-              <li>{t('education.degrees.bachelors.subjects.2')}</li>
-              <li>{t('education.degrees.bachelors.subjects.3')}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="certification-section">
-        <h3 class="certification-title">{t('education.certifications.title')}</h3>
-        <div class="certifications-grid">
-          
-          <div class="certification-item card">
-            <div class="cert-header">
-              <div class="cert-icon">
-                <CheckCircle size={20} />
-              </div>
-              <span class="badge badge-success">{t('education.certified')}</span>
-            </div>
-            <h4 class="cert-name">{t('education.certifications.deutsch.name')}</h4>
-            <p class="cert-issuer">{t('education.certifications.deutsch.issuer')}</p>
-            <p class="cert-date">2022</p>
-            <p class="cert-description">{t('education.certifications.deutsch.description')}</p>
-          </div>
-
-          <div class="certification-item card">
-            <div class="cert-header">
-              <div class="cert-icon">
-                <CheckCircle size={20} />
-              </div>
-              <span class="badge badge-success">{t('education.certified')}</span>
-            </div>
-            <h4 class="cert-name">{t('education.certifications.english.name')}</h4>
-            <p class="cert-issuer">{t('education.certifications.english.issuer')}</p>
-            <p class="cert-date">2023</p>
-            <p class="cert-description">{t('education.certifications.english.description')}</p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
+  <div class="certs">
+    <span class="certs-label">{c.education.certs}</span>
+    {certifications.map((cert) => (
+      <span class="cert">
+        <CheckCircle size={14} />
+        {cert.name} · {cert.year}
+        <span class="status-badge">{c.education.certified}</span>
+      </span>
+    ))}
   </div>
 </section>
 
 <style>
-  .education-grid {
-    display: grid;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
 
-  .education-item {
-    position: relative;
-  }
+  .card { border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .period { font-family: var(--mono); font-size: 11.5px; color: var(--accent); }
+  .icon { color: var(--accent-2); }
+  h3 { font-size: 17px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; text-wrap: pretty; }
+  .school { font-size: 13.5px; color: var(--text-secondary); }
+  .focus { font-size: 13.5px; color: var(--text-muted); line-height: 1.55; margin-top: auto; padding-top: 8px; text-wrap: pretty; }
 
-  .education-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
+  .certs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; align-items: center; }
+  .certs-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
 
-  .education-icon {
-    width: 3rem;
-    height: 3rem;
-    background: var(--primary);
-    color: white;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .cert {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px; color: var(--text-strong);
+    border: 1px solid var(--border); background: var(--surface); padding: 6px 10px; border-radius: 6px;
   }
-
-  .education-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .education-institution {
-    font-size: 1.125rem;
-    color: var(--primary);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-
-  .education-meta {
-    margin-bottom: 1rem;
-  }
-
-  .meta-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-  }
-
-  .education-description {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .education-highlights {
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-  }
-
-  .highlights-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-  }
-
-  .highlights-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
-  }
-
-  .highlights-list li {
-    color: var(--text-secondary);
-    position: relative;
-    padding-left: 1rem;
-  }
-
-  .highlights-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-weight: bold;
-  }
-
-  .certification-section {
-    margin-top: 2rem;
-  }
-
-  .certification-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .certification-item {
-    padding: 1.5rem;
-  }
-
-  .cert-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .cert-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    background: var(--success);
-    color: white;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cert-name {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .cert-issuer {
-    color: var(--primary);
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-  }
-
-  .cert-date {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .cert-description {
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
-  @media (max-width: 768px) {
-    .education-grid {
-      gap: 2rem;
-    }
-    
-    .education-header {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    
-    .highlights-list {
-      grid-template-columns: 1fr;
-    }
-    
-    .certifications-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .certification-title {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .education-title {
-      font-size: 1.25rem;
-    }
-    
-    .education-institution {
-      font-size: 1rem;
-    }
-  }
+  .cert :global(svg) { color: var(--success); }
 </style>
