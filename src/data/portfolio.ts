@@ -42,7 +42,7 @@ export const experience = [
 ];
 
 export const publications = [
-  { year: '2026', venue: 'ER 2026', conference: 'Conceptual Modeling', authors: 'Álvaro Bernal-Caunedo, Marco Franceschetti, Hagen Völzer, Manuel Resinas, Barbara Weber', title: 'A Conceptual Model to Enhance Process Mining Analysis with Provenance' },
+  { year: '2026', venue: 'ER 2026', conference: 'Conceptual Modeling', authors: 'Álvaro Bernal-Caunedo, Marco Franceschetti, Hagen Völzer, Manuel Resinas, Barbara Weber', title: 'A Conceptual Model to Enhance Process Mining Analysis with Provenance', url: 'https://link.springer.com/chapter/10.1007/978-3-032-40795-5_31', pages: '473–483' },
 ];
 
 export const projects = [

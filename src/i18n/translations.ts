@@ -96,7 +96,7 @@ const en = {
   publications: {
     title: 'Publications',
     sub: 'titles kept in English',
-    notPublished: 'Not published yet',
+    published: 'Published in Springer LNCS · presented',
     items: [
       { abstract: "Process mining relies on event data to analyze and improve business processes. The exploratory and non-linear nature of these analyses makes it difficult to understand, validate, compare, and communicate how findings are produced, limiting their business value. Existing provenance techniques focus on data lineage but lack support for systematic comparison of analyses, modular reuse of analysis steps, and comprehensive execution tracking. To address these limitations, we systematically derive a set of requirements and acceptance criteria based on established analytic provenance purposes. We further contribute a structured comparison of state-of-the-art provenance models, revealing critical gaps in comparative capabilities, reusability, and execution tracking. Based on these insights, we propose a conceptual provenance model tailored to exploratory process mining that supports branching analysis paths, comparison of analysis histories and states, reusability of analysis steps, and transparent representation of data evolution.", place: "St. John's, Canada" },
     ],
@@ -262,7 +262,7 @@ const es: Content = {
   publications: {
     title: 'Publicaciones',
     sub: 'títulos en inglés',
-    notPublished: 'Aún no publicado',
+    published: 'Publicado en Springer LNCS · presentado',
     items: [
       { abstract: "El process mining se basa en datos de eventos para analizar y mejorar los procesos de negocio. La naturaleza exploratoria y no lineal de estos análisis dificulta entender, validar, comparar y comunicar cómo se producen los hallazgos, lo que limita su valor para el negocio. Las técnicas de procedencia existentes se centran en el linaje de los datos, pero carecen de soporte para la comparación sistemática de análisis, la reutilización modular de los pasos de análisis y un seguimiento completo de la ejecución. Para abordar estas limitaciones, derivamos sistemáticamente un conjunto de requisitos y criterios de aceptación basados en los propósitos consolidados de la procedencia analítica. Además, aportamos una comparación estructurada de los modelos de procedencia del estado del arte, que revela carencias críticas en capacidades comparativas, reutilización y seguimiento de la ejecución. A partir de estas conclusiones, proponemos un modelo conceptual de procedencia adaptado al process mining exploratorio, que soporta rutas de análisis ramificadas, la comparación de historiales y estados de análisis, la reutilización de los pasos de análisis y una representación transparente de la evolución de los datos.", place: "St. John's, Canadá" },
     ],
@@ -426,7 +426,7 @@ const de: Content = {
   publications: {
     title: 'Publikationen',
     sub: 'Titel auf Englisch',
-    notPublished: 'Noch nicht veröffentlicht',
+    published: 'In Springer LNCS veröffentlicht · präsentiert',
     items: [
       { abstract: "Process Mining stützt sich auf Ereignisdaten, um Geschäftsprozesse zu analysieren und zu verbessern. Die explorative und nicht-lineare Natur dieser Analysen erschwert es, nachzuvollziehen, zu validieren, zu vergleichen und zu kommunizieren, wie Erkenntnisse entstehen, und schmälert so ihren geschäftlichen Nutzen. Bestehende Provenienztechniken konzentrieren sich auf Datenherkunft, unterstützen aber weder den systematischen Vergleich von Analysen noch die modulare Wiederverwendung von Analyseschritten oder eine umfassende Ausführungsverfolgung. Um diese Einschränkungen zu adressieren, leiten wir systematisch Anforderungen und Akzeptanzkriterien aus etablierten Zwecken analytischer Provenienz ab. Zudem liefern wir einen strukturierten Vergleich aktueller Provenienzmodelle, der kritische Lücken bei Vergleichbarkeit, Wiederverwendbarkeit und Ausführungsverfolgung aufzeigt. Auf dieser Grundlage schlagen wir ein konzeptuelles Provenienzmodell für exploratives Process Mining vor, das verzweigte Analysepfade, den Vergleich von Analyseverläufen und -zuständen, die Wiederverwendbarkeit von Analyseschritten und eine transparente Darstellung der Datenentwicklung unterstützt.", place: "St. John's, Kanada" },
     ],

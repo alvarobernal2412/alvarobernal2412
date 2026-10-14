@@ -17,10 +17,10 @@ const c = useContent(lang);
       <div class="pub">
         <span class="year">{p.year}</span>
         <span class="text">
-          <span class="title">{p.title}</span>
+          <span class="title">{p.url ? <a href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}</span>
           <span class="authors">{p.authors}</span>
-          <span class="meta">{p.conference} · {c.publications.items[i].place}</span>
-          <span class="status"><span class="status-badge progress">{c.publications.notPublished}</span></span>
+          <span class="meta">{p.conference} · {c.publications.items[i].place}{p.pages && ` · pp. ${p.pages}`}</span>
+          <span class="status"><span class="status-badge">{c.publications.published}</span></span>
           <span class="takeaway">{c.publications.items[i].abstract}</span>
         </span>
         <span class="venue">{p.venue}</span>
@@ -45,6 +45,8 @@ const c = useContent(lang);
   .year { font-family: var(--mono); font-size: 12.5px; color: var(--text-muted); padding-top: 3px; }
   .text { min-width: 0; }
   .title { display: block; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; text-wrap: pretty; }
+  .title a { color: inherit; text-decoration: none; }
+  .title a:hover { color: var(--accent); }
   .meta { display: block; font-family: var(--mono); font-size: 12px; color: var(--accent); margin-top: 8px; }
   .status { display: block; margin-top: 10px; }
   .authors { display: block; font-size: 13.5px; color: var(--text-strong); margin-top: 6px; }
