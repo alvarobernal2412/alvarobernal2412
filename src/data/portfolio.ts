@@ -47,6 +47,11 @@ export const publications = [
 
 export const projects = [
   {
+    name: 'Research Radar',
+    source: 'https://github.com/alvarobernal2412/research-radar',
+    tags: ['Python', 'JavaScript', 'Claude', 'OpenAlex', 'Docker'],
+  },
+  {
     name: 'Harmony LTD',
     demo: 'https://htld-doc.vercel.app',
     source: 'https://github.com/orgs/ISPP-07/repositories',

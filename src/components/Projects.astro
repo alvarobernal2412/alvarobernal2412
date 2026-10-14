@@ -41,7 +41,9 @@ const statIcons = [Users, TrendingUp, Calendar];
             <div class="tag-row">{p.tags.map((t) => <span class="tag">{t}</span>)}</div>
 
             <div class="links">
-              <a href={p.demo} target="_blank" rel="noopener" aria-label={c.projects.viewProject} title={c.projects.viewProject}><ExternalLink size={18} /></a>
+              {p.demo && (
+                <a href={p.demo} target="_blank" rel="noopener" aria-label={c.projects.viewProject} title={c.projects.viewProject}><ExternalLink size={18} /></a>
+              )}
               <a href={p.source} target="_blank" rel="noopener" aria-label={c.projects.viewSource} title={c.projects.viewSource}><Github size={18} /></a>
               {p.thesis && (
                 <a href={p.thesis} target="_blank" rel="noopener" aria-label={c.projects.viewThesis} title={c.projects.viewThesis}><FileText size={18} /></a>

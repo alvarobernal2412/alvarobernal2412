@@ -110,6 +110,12 @@ const en = {
     achievements: 'Key Achievements',
     items: [
       {
+        role: 'RESEARCH TOOL',
+        desc: 'A literature radar for one research topic: a weekly Claude scan finds new papers, scores their affinity to your topic and keeps a website up to date with conferences, journals, contributions and a co-authorship network.',
+        stats: ['Research tooling', 'Weekly AI scan', 'Open source'],
+        achievements: ['Scored papers by affinity to a research topic', 'Built conference, journal and co-authorship views with BibTeX export', 'Made it reusable for any topic via configuration'],
+      },
+      {
         role: 'DEVOPS · PM',
         desc: 'Information system project for Software Engineering and Professional Practice at Universidad de Sevilla, developed for two non-profit organizations (Asociación Tertulia Cofrade Cirio y Costal and Asociación Ciudadana de Ayuda al Toxicómano). Led a team of 17 students.',
         stats: ['17-person team', 'DevOps leadership', 'Academic year'],
@@ -270,6 +276,12 @@ const es: Content = {
     achievements: 'Logros Clave',
     items: [
       {
+        role: 'HERRAMIENTA DE INVESTIGACIÓN',
+        desc: 'Radar de literatura para un tema de investigación: un escaneo semanal con Claude encuentra nuevos artículos, puntúa su afinidad con tu tema y mantiene actualizado un sitio web con conferencias, revistas, contribuciones y una red de coautoría.',
+        stats: ['Herramienta de investigación', 'Escaneo semanal con IA', 'Código abierto'],
+        achievements: ['Puntué artículos según su afinidad con un tema de investigación', 'Construí vistas de conferencias, revistas y coautoría con exportación BibTeX', 'Lo hice reutilizable para cualquier tema mediante configuración'],
+      },
+      {
         role: 'DEVOPS · PM',
         desc: 'Proyecto de sistema de información para Ingeniería del Software y Práctica Profesional de la Universidad de Sevilla, desarrollado para dos organizaciones sin ánimo de lucro (Asociación Tertulia Cofrade Cirio y Costal y Asociación Ciudadana de Ayuda al Toxicómano). Lideré un equipo de 17 estudiantes.',
         stats: ['Equipo de 17 personas', 'Liderazgo DevOps', 'Año académico'],
@@ -427,6 +439,12 @@ const de: Content = {
     viewThesis: 'Arbeit lesen (PDF)',
     achievements: 'Wichtigste Erfolge',
     items: [
+      {
+        role: 'FORSCHUNGSTOOL',
+        desc: 'Literatur-Radar für ein Forschungsthema: Ein wöchentlicher Claude-Scan findet neue Paper, bewertet ihre Nähe zum Thema und hält eine Website mit Konferenzen, Journals, Beiträgen und einem Koautorennetzwerk aktuell.',
+        stats: ['Forschungswerkzeug', 'Wöchentlicher KI-Scan', 'Open Source'],
+        achievements: ['Paper nach Nähe zu einem Forschungsthema bewertet', 'Konferenz-, Journal- und Koautoren-Ansichten mit BibTeX-Export gebaut', 'Per Konfiguration für jedes Thema wiederverwendbar gemacht'],
+      },
       {
         role: 'DEVOPS · PM',
         desc: 'Informationssystem für Software Engineering und Berufspraxis an der Universidad de Sevilla, entwickelt für zwei Non-Profit-Organisationen (Asociación Tertulia Cofrade Cirio y Costal und Asociación Ciudadana de Ayuda al Toxicómano). Leitung eines Teams von 17 Studierenden.',
